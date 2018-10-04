@@ -1,0 +1,976 @@
+/* Medium Layout: 1367px. */
+
+@media only screen and (min-width: 1200px) and (max-width: 1367px) {
+    /*home4*/
+    .h4-hero-carousel .owl-nav {
+        bottom: -210px;
+        right: -120%;
+    }
+}
+
+
+
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /*home-1*/
+    .main-menu ul li a {
+        padding: 10px 16px;
+    }
+    .menu-book a {
+        padding: 11px 20px;
+    }
+    .rhf-persons-room .rhf-persons p .qtybutton {
+        width: 30px;
+    }
+    .introduce-carousel .owl-nav {
+        bottom: 0px;
+    }
+    .pick-room-left .prl-title {
+        font-size: 38px;
+        line-height: 42px;
+    }
+    .reservation-hero::after {
+        border-width: 115px 145px 0;
+    }
+    .gallery-box .gallery-box-content {
+        width: 99%;
+    }
+    /*home2*/
+    .hero2-reservation-form .rhf-input-box {
+        min-width: auto;
+        width: 22%;
+    }
+    .hero-2-carousel .owl-nav>div {
+        display: none;
+    }
+    /*home-3*/
+    .menu-area-3 .menu>li a {
+        padding: 20px 16px;
+    }
+    .menu-area-3 .menu>li:first-child a {
+        padding: 20px 16px;
+    }
+    /*home-4*/
+    .h4-hero-carousel .owl-nav>div {
+        height: 60px;
+        line-height: 60px;
+        width: 60px;
+    }
+    .h4-hero-carousel .owl-nav {
+        bottom: -210px;
+        right: -100%;
+    }
+    .h4-book-area {
+        padding: 60px 0 0;
+    }
+    .h4-book-content {
+        margin: 0 0 30px;
+    }
+    /*about*/
+}
+
+
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /*home-1*/
+    header {
+        position: inherit;
+    }
+    .hero-area {
+        padding: 80px 0;
+    }
+    .carousel-indicators-numbers li {
+        margin: 0 14px;
+    }
+    .carousel-indicators-numbers li.active,
+    .carousel-indicators-numbers li:hover {
+        margin: 0 14px;
+    }
+    .pick-room-left {
+        margin: 0 0 60px;
+    }
+    .service-area {
+        padding: 37px 0 50px;
+    }
+    .service-1 .service-box {
+        margin: 0 0 30px;
+    }
+    .introduce-carousel .owl-nav {
+        bottom: 0;
+        position: absolute;
+        right: 0;
+    }
+    .gallery-box .gallery-box-content {
+        width: 80%;
+    }
+    .gallery-box .gallery-box-content a {
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0 0 5px;
+    }
+    .gallery-box .gallery-box-content .gb-title {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0 0 6px;
+    }
+    .gallery-box .gallery-box-content .gb-text {
+        line-height: 18px;
+    }
+    .event-area {
+        margin: 0 0 100px;
+    }
+    .single-staff {
+        margin: 0 0 30px;
+    }
+    .footer-widget {
+        margin: 0 0 30px;
+    }
+    .slider-hero-area .carousel-indicators {
+        bottom: -180px;
+    }
+    .reservation-hero {
+        padding: 33px 40px 100px;
+    }
+    .reservation-hero::after {
+        display: none;
+    }
+    /*home-2*/
+    .header-top-2 {
+        text-align: center;
+    }
+    .logo-2 {
+        text-align: center;
+    }
+    .hero-2-carousel .owl-nav>div {
+        height: 50px;
+        line-height: 50px;
+        width: 50px;
+    }
+    .hero2-reservation-form .rhf-input-box {
+        margin-right: 3%;
+        width: 22%;
+        min-width: auto;
+    }
+    .hero2-reservation-form .rhf-persons-room {
+        width: 40%;
+    }
+    .hero2-reservation-form .rhf-send {
+        bottom: 0;
+        float: right;
+        left: 0;
+        position: relative;
+        right: auto;
+        top: 30px;
+    }
+    .h2-about-video {
+        margin: 40px 0 0;
+    }
+    .offers-carousel .owl-dots {
+        bottom: -40px;
+    }
+    .ss2-content {
+        margin: 10px 0 0;
+    }
+    .our-contact-box {
+        margin: 0 0 30px;
+    }
+    .our-contact-area {
+        padding: 152px 0 49px;
+    }
+    .hero-2-carousel .owl-nav>div {
+        display: none;
+    }
+    /*home-3*/
+    .h3-logo {
+        text-align: center;
+    }
+    .h3-hero-carousel .owl-nav>div {
+        height: 40px;
+        line-height: 40px;
+        width: 40px;
+    }
+    .h3-service-box {
+        margin: 0 0 30px;
+    }
+    .h3-pick-room-head {
+        margin: 0 0 50px;
+    }
+    .h3-room-suits-box {
+        margin: 0 0 30px;
+    }
+    /*home-4*/
+    .header-4 {
+        background: rgba(7, 14, 19, 0.9) none repeat scroll 0 0;
+        padding: 30px 0;
+        text-align: center;
+    }
+    .h4-hero-area {
+        padding: 110px 0 100px;
+    }
+    .h4-hero-carousel .owl-nav {
+        bottom: -35%;
+        right: auto;
+        left: 0;
+    }
+    .h4-hero-carousel .owl-nav>div {
+        font-size: 20px;
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+    }
+    .h4-book-img {
+        top: 40px;
+    }
+    .h4bc-number-date-form-area {
+        margin: 30px 0 0;
+    }
+    .h4-book-box {
+        margin: 0 0 30px;
+    }
+    .h4-gallery-content {
+        width: 33.3334%;
+    }
+    .testimonial-area {
+        margin: 60px 0 0;
+    }
+    /*about*/
+    .others-head-area {
+        padding: 150px 0 130px;
+    }
+    .oh-title {
+        font-size: 42px;
+        line-height: 46px;
+    }
+    /*room-details*/
+    .prda-top-left-form {
+        margin-bottom: 0;
+    }
+    .prda-top-right {
+        margin: 0 0 30px;
+    }
+    /*make-payment*/
+    .make-payment-img {
+        margin: 0 0 30px;
+    }
+    .make-payment-img .mpi-book {
+        float: none;
+    }
+    /*gallery-full*/
+    .full-gallery-box {
+        width: 50%;
+    }
+    /*gallery-details*/
+    .gallery-details {
+        margin: 60px 0 0;
+    }
+    /*contact*/
+    .ce-box {
+        width: 100%;
+    }
+    .error-menu-bg-area {
+        display: none;
+    }
+    /*blog-single*/
+    .sidebar-area {
+        margin: 60px 0 0;
+    }
+}
+
+
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {}
+
+
+
+/* Wide Mobile Layout: 480px. */
+
+
+/*home-1*/
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+
+    header {
+        position: inherit;
+    }
+    .header-address {
+        text-align: center;
+        margin: 0 0 30px;
+    }
+    .header-logo {
+        text-align: center;
+        margin: 0 0 30px;
+    }
+    .header-weather {
+        text-align: center;
+    }
+    .hero-area {
+        padding: 100px 0;
+    }
+    .slider-hero {
+        text-align: left;
+    }
+    .slider-hero-area .carousel-indicators {
+        bottom: -50px;
+        left: 0;
+        margin: auto;
+        right: 0;
+    }
+    .carousel-indicators-numbers li {
+        margin: 0 8px;
+    }
+    .carousel-indicators-numbers li.active,
+    .carousel-indicators-numbers li:hover {
+        margin: 0 8px;
+    }
+    .pick-room-left .prl-title {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .pick-room-left {
+        margin: 0 0 30px;
+    }
+    .service-area {
+        padding: 37px 0 50px;
+    }
+    .service-1 .service-box {
+        margin: 0 0 30px;
+    }
+    .introduce-carousel .owl-nav {
+        bottom: -60px;
+    }
+    .introduce-area {
+        padding: 60px 0 100px;
+    }
+    .special-service-box {
+        margin: auto auto 30px;
+    }
+    .ss-view-all {
+        margin: 10px 0 0;
+    }
+    .off-book-right {
+        text-align: center;
+        margin: 30px 0 0;
+    }
+    .gallery-box {
+        display: inline-block;
+    }
+    .gallery-box .gallery-box-content a {
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0 0 6px;
+    }
+    .event-area {
+        margin: 0 0 100px;
+    }
+    .footer-widget {
+        margin: 0 0 60px;
+    }
+    .footer-top-area {
+        padding: 65px 0 0;
+    }
+    .single-staff {
+        display: inline-block;
+    }
+    .blog-area {
+        padding: 80px 0 50px;
+    }
+    .single-blog {
+        margin: 0 0 30px;
+    }
+    .single-blog .blog-img .bi-content {
+        padding: 10px;
+    }
+    .reservation-hero {
+        padding: 33px 40px 100px;
+    }
+    .reservation-hero::after {
+        display: none;
+    }
+    /*home2*/
+    .hero-2-area {
+        padding: 100px 0;
+    }
+    .header-top-2 {
+        text-align: left;
+    }
+    .header-address-2 {
+        margin: 0 0 30px;
+    }
+    .header-address-2 .ha-icon {
+        margin-right: 10px;
+    }
+    .header-weather-2 .hw-icon {
+        margin-right: 10px;
+    }
+    .logo-2 {
+        text-align: center;
+    }
+    .hero-2-carousel-left .h2cl-off h2 {
+        font-size: 50px;
+        line-height: 54px;
+    }
+    .hero-2-carousel-left .h2cl-off h3 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    .hero-2-carousel-left .h2cl-title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .hero-2-carousel .owl-nav {
+        display: none;
+    }
+    .hero-2-carousel-left .h2cl-text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .hero-2-revervation-area {
+        position: inherit;
+    }
+    .hero2-reservation-form .rhf-input-box {
+        min-width: 100%;
+    }
+    .hero2-reservation-form .rhf-persons-room {
+        width: 100%;
+    }
+    .rhf-persons-room .rhf-persons {
+        padding-right: 0;
+        width: 100%;
+    }
+    .rhf-persons-room .rhf-room {
+        padding-left: 0;
+        width: 100%;
+    }
+    .hero2-reservation {
+        padding: 20px 20px 40px;
+    }
+    .hero2-reservation-form .rhf-send {
+        left: auto;
+        margin: auto;
+        right: auto;
+        width: 100%;
+    }
+    .h2-about-why-choose {
+        margin: 0 0 30px;
+    }
+    .service-2 {
+        margin: 0 0 30px;
+    }
+    .room-suits-carousel .owl-nav {
+        display: none;
+    }
+    .offers-left {
+        margin: 0 0 30px;
+    }
+    .single-blog2 .blog2-img::after {
+        width: 100%;
+    }
+    .single-blog2 {
+        margin: 0 0 30px;
+    }
+    .blog2-area {
+        padding: 80px 0 10px;
+    }
+    .our-contact-box {
+        margin: 0 0 30px;
+    }
+    .our-contact-area {
+        padding: 152px 0 49px;
+    }
+    .footer-flicker-widget ul li {
+        width: 15%;
+    }
+    /*home-3*/
+    .h3-logo {
+        text-align: center;
+    }
+    .h3-pick-room-left {
+        margin: 0 0 30px;
+    }
+    .h3-room-suits-box {
+        display: inline-block;
+        margin: 0 0 30px;
+    }
+    /*home-4*/
+    .header-4 {
+        background: rgba(7, 14, 19, 0.9) none repeat scroll 0 0;
+        padding: 30px 0;
+        text-align: center;
+    }
+    .h4-hero-area {
+        padding: 100px 0 120px;
+    }
+    .h4-book-img {
+        margin: 30px 0;
+        top: 0;
+    }
+    .h4-gallery-content {
+        width: 50%;
+    }
+    .h4-counter {
+        margin: 0 0 30px;
+    }
+    .h4-hero-carousel .owl-nav {
+        bottom: -110px;
+        right: 0;
+    }
+    .h4-hero-carousel .owl-nav>div {
+        height: 50px;
+        line-height: 50px;
+        width: 50px;
+    }
+    /*about*/
+    .others-head-area {
+        padding: 150px 0 130px;
+    }
+    .oh-title {
+        font-size: 42px;
+        line-height: 46px;
+    }
+    /*staff-details*/
+    .sp-sd-left {
+        margin: 0 0 30px;
+    }
+    /*rooms*/
+    .page-rooms-area {
+        padding: 80px 0 0;
+    }
+    .page-rooms-area .prr-box {
+        margin: 50px 0 120px;
+    }
+    /*rooms-details*/
+    .prda-top-right {
+        margin: 0 0 60px;
+    }
+    .prda-top-bottom-right {
+        display: block;
+        float: none;
+        margin: 30px 0 0;
+    }
+    .prda-br-list {
+        margin: 0 0 30px;
+    }
+    .prda-bottom-left {
+        margin: 0 0 30px;
+    }
+    .prda-top-right {
+        margin: 0 0 30px;
+    }
+    /*choose-date*/
+    .rh-box {
+        flex: 1 1 50%;
+    }
+    .rh-box::after {
+        display: none;
+    }
+    .month-box {
+        margin: 0 0 30px;
+    }
+    /*chooose-room*/
+    .choose-room-area .h4-book-img {
+        top: -20px;
+    }
+    /*make-payment*/
+    .make-payment-img {
+        margin: 0 0 90px;
+    }
+    /*gallery-full*/
+    .full-gallery-box {
+        width: 50%;
+    }
+    /*gallery-details*/
+    .gallery-details {
+        margin: 60px 0 0;
+    }
+    /*404*/
+    .errors h1 {
+        letter-spacing: 0;
+    }
+    .error-menu-bg-area {
+        display: none;
+    }
+    /*blog-single*/
+    .bs-meta .bi-content-date {
+        margin-right: 30px;
+    }
+    .bs-inner-img {
+        margin: 0 0 30px;
+    }
+    .sidebar-area {
+        margin: 60px 0 0;
+    }
+}
+
+
+
+/* Wide Mobile Layout: 480px. */
+
+
+/*home-1*/
+
+@media only screen and (min-width: 240px) and (max-width: 480px) {
+
+    header {
+        position: inherit;
+    }
+    .header-address {
+        text-align: center;
+        margin: 0 0 30px;
+    }
+    .header-logo {
+        text-align: center;
+        margin: 0 0 30px;
+    }
+    .header-weather {
+        text-align: center;
+    }
+    .hero-area {
+        padding: 100px 0;
+    }
+    .slider-hero {
+        text-align: left;
+    }
+    .reservation-hero {
+        padding: 33px 40px 100px;
+    }
+    .reservation-hero::after {
+        display: none;
+    }
+    .slider-hero-area .carousel-indicators {
+        bottom: -50px;
+        left: 0;
+        margin: auto;
+        right: 0;
+    }
+    .carousel-indicators-numbers li {
+        margin: 0 8px;
+    }
+    .carousel-indicators-numbers li.active,
+    .carousel-indicators-numbers li:hover {
+        margin: 0 8px;
+    }
+    .pick-room-left .prl-title {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .pick-room-left {
+        margin: 0 0 30px;
+    }
+    .service-area {
+        padding: 37px 0 50px;
+    }
+    .service-1 .service-box {
+        margin: 0 0 30px;
+    }
+    .introduce-carousel .owl-nav {
+        bottom: -60px;
+    }
+    .introduce-area {
+        padding: 60px 0 100px;
+    }
+    .special-service-box {
+        margin: 0 0 30px;
+    }
+    .ss-view-all {
+        margin: 10px 0 0;
+    }
+    .off-book-right {
+        text-align: center;
+        margin: 30px 0 0;
+    }
+    .gallery-box {
+        display: inline-block;
+    }
+    .gallery-box .gallery-box-content a {
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0 0 6px;
+    }
+    .event-area {
+        margin: 0 0 100px;
+    }
+    .footer-widget {
+        margin: 0 0 60px;
+    }
+    .footer-top-area {
+        padding: 65px 0 0;
+    }
+    .blog-area {
+        padding: 80px 0 50px;
+    }
+    .single-blog {
+        margin: 0 0 30px;
+    }
+    .single-blog .blog-img .bi-content {
+        padding: 10px;
+    }
+    /*home2*/
+    .hero-2-area {
+        padding: 100px 0;
+    }
+    .header-top-2 {
+        text-align: left;
+    }
+    .header-address-2 {
+        margin: 0 0 30px;
+    }
+    .header-address-2 .ha-icon {
+        margin-right: 10px;
+    }
+    .header-weather-2 .hw-icon {
+        margin-right: 10px;
+    }
+    .logo-2 {
+        text-align: center;
+    }
+    .hero-2-carousel-left .h2cl-off h2 {
+        font-size: 50px;
+        line-height: 54px;
+    }
+    .hero-2-carousel-left .h2cl-off h3 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+    .hero-2-carousel-left .h2cl-title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .hero-2-carousel .owl-nav {
+        display: none;
+    }
+    .hero-2-carousel-left .h2cl-text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .hero-2-revervation-area {
+        position: inherit;
+    }
+    .hero2-reservation-form .rhf-input-box {
+        min-width: 100%;
+    }
+    .hero2-reservation-form .rhf-persons-room {
+        width: 100%;
+    }
+    .rhf-persons-room .rhf-persons {
+        padding-right: 0;
+        width: 100%;
+    }
+    .rhf-persons-room .rhf-room {
+        padding-left: 0;
+        width: 100%;
+    }
+    .hero2-reservation {
+        padding: 20px 20px 40px;
+    }
+    .hero2-reservation-form .rhf-send {
+        left: auto;
+        margin: auto;
+        right: auto;
+        width: 100%;
+    }
+    .h2-about-why-choose {
+        margin: 0 0 30px;
+    }
+    .service-2 {
+        margin: 0 0 30px;
+    }
+    .room-suits-carousel .owl-nav {
+        display: none;
+    }
+    .offers-left {
+        margin: 0 0 30px;
+    }
+    .single-blog2 .blog2-img::after {
+        width: 100%;
+    }
+    .single-blog2 {
+        margin: 0 0 30px;
+    }
+    .blog2-area {
+        padding: 80px 0 10px;
+    }
+    .our-contact-box {
+        margin: 0 0 30px;
+    }
+    .our-contact-area {
+        padding: 152px 0 49px;
+    }
+    /*home-3*/
+    .h3-logo {
+        text-align: center;
+    }
+    .h3-service-box {
+        margin: 0 0 30px;
+    }
+    .h3-service-area {
+        padding: 80px 0 0;
+    }
+    .h3-pick-section-title h2,
+    .h3-pick-section-title h2 span {
+        ;
+        font-size: 34px;
+        line-height: 38px;
+    }
+    .h3-pick-room-left {
+        margin: 0 0 30px;
+    }
+    .h3-pick-form-area {
+        padding: 41px 14px 0;
+    }
+    .h3-room-suits-box {
+        margin: 0 0 30px;
+    }
+    .h3-room-suits-box .prr-form-area {
+        padding: 42px 10px 30px;
+    }
+    /*home-4*/
+    .header-4 {
+        background: rgba(7, 14, 19, 0.9) none repeat scroll 0 0;
+        padding: 30px 0;
+        text-align: center;
+    }
+    .h4-hero-area {
+        padding: 120px 0 240px;
+    }
+    .h4-hero-carousel .owl-nav {
+        bottom: -240px;
+        left: 0;
+        position: absolute;
+        right: auto;
+    }
+    .h4-book-img {
+        margin: 30px 0;
+        top: 0;
+    }
+    .h4bc-number-date-form-area .h4bc-ndfa-book {
+        float: none;
+    }
+    .h4-book-area {
+        padding: 0 0 30px;
+    }
+    .h4-gallery-content {
+        width: 100%;
+    }
+    .testimonial-area {
+        margin: 30px 0 0;
+    }
+    .h4-counter-box>p,
+    .h4-counter-box>p span {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    /*about*/
+    .others-head-area {
+        padding: 150px 0 130px;
+    }
+    .oh-title {
+        font-size: 42px;
+        line-height: 46px;
+    }
+    /*staff-details*/
+    .page-rooms-area {
+        padding: 80px 0 0;
+    }
+    .sp-sd-left {
+        margin: 0 0 30px;
+    }
+    .page-rooms-area .prr-box {
+        margin: 50px 0 270px;
+    }
+    .prr-form-area {
+        padding: 40px 20px;
+    }
+    /*rooms-details*/
+    .prda-top-right {
+        margin: 0 0 60px;
+    }
+    .prda-top-bottom-right {
+        display: block;
+        float: none;
+        margin: 30px 0 0;
+    }
+    .prda-br-list {
+        margin: 0 0 30px;
+    }
+    .prda-bottom-left {
+        margin: 0 0 30px;
+    }
+    /*choose-date*/
+    .rh-box {
+        flex: 1 1 50%;
+    }
+    .rh-box::after {
+        display: none;
+    }
+    .month-box {
+        margin: 0 0 16px;
+    }
+    /*chooose-room*/
+    .choose-room-area .h4-book-img {
+        top: -20px;
+    }
+    .oh-title {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    /*make-payment*/
+    .make-payment-select-room {
+        padding: 54px 12px 46px;
+    }
+    .make-payment-img {
+        margin: 0 0 90px;
+    }
+    /*gallery-full*/
+    .full-gallery-box {
+        width: 100%;
+    }
+    /*gallery-details*/
+    .gallery-details {
+        margin: 60px 0 0;
+    }
+    .gd-meta-box {
+        width: 100%;
+    }
+    /*contact*/
+    .ce-box {
+        width: 100%;
+    }
+    /*error*/
+    .errors h1 {
+        font-size: 80px;
+        line-height: 86px;
+    }
+    .error-menu-bg-area {
+        display: none;
+    }
+    /*blog-single*/
+    .bs-meta .bi-content-date {
+        margin-right: 12px;
+    }
+    .bs-meta .bi-content-date i {
+        margin-right: 8px;
+    }
+    .bs-meta .bi-content-like-comment span i {
+        margin-right: 8px;
+    }
+    .bs-inner-img {
+        margin: 0 0 30px;
+    }
+    .bscb-content {
+        margin: 30px 0 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    .sidebar-area {
+        margin: 60px 0 0;
+    }
+    .widget-post-list li a .wpl-content {
+        padding-left: 12px;
+        width: 70%;
+    }
+}
