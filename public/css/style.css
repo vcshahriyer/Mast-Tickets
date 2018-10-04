@@ -786,7 +786,7 @@ header {
 /*2.1 Hero*/
 
 .hero-area {
-    background: rgba(0, 0, 0, 0) url("../img/home1/hero-bg.jpg") no-repeat scroll left top / cover;
+    background: rgba(0, 0, 0, 0) url("../img/home1/Bus_Hero.jpg") no-repeat scroll left top / cover;
     padding: 360px 0 80px;
 }
 
@@ -980,7 +980,7 @@ header {
 
 .slider-hero .sh-intro {
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 2px;
     line-height: 18px;
@@ -994,6 +994,9 @@ header {
     line-height: 76px;
     margin: 0 0 18px;
     text-transform: capitalize;
+    background-color: #504c4c;
+    width: 71%;
+    float: right;
 }
 
 .slider-hero .sh-text {
@@ -3076,7 +3079,7 @@ header {
 /*----------------------------------------*/
 
 .header-3 {
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 .h3-logo {}

@@ -47,22 +47,20 @@
                                 <div class="item active">
                                     <div class="slider-hero">
                                         <h5 class="sh-intro">Welcome to</h5>
-                                        <h2 class="sh-title">Grand Hotel</h2>
-                                        <h4 class="sh-text">A place to experience and enjoy the life</h4>
+                                        <h2 class="sh-title">Mast Tickets</h2>
+                                        <div class="clearfix"></div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="slider-hero">
                                         <h5 class="sh-intro">Welcome to</h5>
-                                        <h2 class="sh-title">Grand Hotel</h2>
-                                        <h4 class="sh-text">A place to experience and enjoy the life</h4>
+                                        <h2 class="sh-title">Mast Tickets</h2>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="slider-hero">
                                         <h5 class="sh-intro">Welcome to</h5>
-                                        <h2 class="sh-title">Grand Hotel</h2>
-                                        <h4 class="sh-text">A place to experience and enjoy the life</h4>
+                                        <h2 class="sh-title">Mast Tickets</h2>
                                     </div>
                                 </div>
                             </div>
