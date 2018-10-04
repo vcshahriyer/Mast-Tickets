@@ -44,6 +44,17 @@
     @yield("preloader")
     <!-- header-start -->
     <header class="header-3">
+    @if (Route::has('login'))
+    <div class="login">
+        @auth
+        <a href="#">User</a>
+        <a href="#">Log Out</a>
+        @else
+        <a href="#">Sign Up</a>
+        <a href="#">Log in</a>
+        @endauth
+    </div>
+    @endif
         <div class="container">
             <div class="row">
                 <div class="col-md-2">

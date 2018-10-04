@@ -2,7 +2,7 @@
 
 
 @section("preloader")
-<div id="preloader"></div>
+<!-- <div id="preloader"></div> -->
 @endsection
 
 @section("content")

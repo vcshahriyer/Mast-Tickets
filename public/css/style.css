@@ -60,6 +60,24 @@
 
 -----------------------------------------------------------------------------------*/
 
+.header-3 .login{
+    padding-right: 2%;
+}
+.header-3 .login a {
+    float: right;
+    padding-right: 15px;
+    font-size: 15px;
+    color: #fff;
+}
+.login a:hover{
+    color: #b58a60;
+    text-decoration: none;
+    outline: 0;
+}
+
+
+
+
 
 /*----------------------------------------*/
 
