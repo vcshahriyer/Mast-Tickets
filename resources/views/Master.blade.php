@@ -50,8 +50,8 @@
         <a href="#">User</a>
         <a href="#">Log Out</a>
         @else
-        <a href="#">Sign Up</a>
-        <a href="#">Log in</a>
+        <a href="{{ route('login') }}">Sign Up</a>
+        <a href="{{ route('login') }}">Log in</a>
         @endauth
     </div>
     @endif
