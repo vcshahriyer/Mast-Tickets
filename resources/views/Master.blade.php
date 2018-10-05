@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-md-2">
                     <div class="h3-logo">
-                        <a href="{{route("Home")}}"><img src="img/home1/logo.png" alt=""></a>
+                        <a href="{{route("Home")}}"><img src="{{asset("svg/edited.svg")}}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-10 hidden-sm hidden-xs">
@@ -67,48 +67,17 @@
                         <nav>
                             <ul class="menu">
                                 <li class="active"><a href="{{route("Home")}}">Home</a></li>
-                                <li><a href="blog-standard.html">Blog</a>
+                                <li><a href="{{route("Booking")}}">Booking</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Companies</a>
                                     <ul class="dropdown">
-                                        <li><a href="blog-standard.html">Blog Standard</a></li>
-                                        <li><a href="blog-standard-2.html">Blog Standard 2</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                        <li><a href="#">Hanif</a></li>
+                                        <li><a href="#">Ena</a></li>
+                                        <li><a href="#">S.R Travel</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="gallery-standard.html">Gallery</a>
-                                    <ul class="dropdown">
-                                        <li><a href="gallery-standard.html">Gallery Standard</a></li>
-                                        <li><a href="gallery-masonary.html">Gallery Masonary</a></li>
-                                        <li><a href="gallery-full-width.html">Gallery Full Width</a></li>
-                                        <li><a href="gallery-details.html">Gallery Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="rooms.html">Rooms</a>
-                                    <ul class="dropdown">
-                                        <li><a href="rooms.html">Rooms</a></li>
-                                        <li><a href="rooms-2.html">Rooms 2</a></li>
-                                        <li><a href="rooms-details.html">Rooms Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="service.html">Service</a>
-                                    <ul class="dropdown">
-                                        <li><a href="service.html">Service</a></li>
-                                        <li><a href="service-details.html">Service Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="staff.html">Staff</a>
-                                    <ul class="dropdown from-right">
-                                        <li><a href="staff.html">Staff</a>
-                                            <li><a href="staff-details.html">Staff Details</a></li>
-                                    </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown from-right">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="contact-2.html">Contact 2</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
                             </ul>
                         </nav>
                     </div>

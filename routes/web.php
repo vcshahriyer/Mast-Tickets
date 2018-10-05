@@ -18,5 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/booking', function () {
 	return view('Booking.booking-form');
-});
+})->name("Booking");
 Route::post("/booked",'BookingController@booked');
