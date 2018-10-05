@@ -7,6 +7,7 @@
 @section("content")
     <div class="wrapper">
         <div class="container">
+            <div class="alert alert-success" style="display:none"></div>
             <div id="seat-map">
                 <div class="front-indicator">Front</div>
 
@@ -15,6 +16,7 @@
                 <h2>Booking Details</h2>
 
                 <h3> Selected Seats (<span id="counter">0</span>):</h3>
+                @csrf
                 <ul id="selected-seats"></ul>
 
                 Total: <b>$<span id="total">0</span></b>
@@ -50,6 +52,7 @@
                         'ee_ee',
                         'ee_ee',
                         'ee_ee',
+                        'ee_ee',
                         'eeeee',
                     ],
                     seats: {
@@ -67,8 +70,10 @@
                     },
                     naming : {
                         top : false,
+                        rows: ['A', 'B', 'C', 'D', 'E','F','G','H','I','J'],
+
                         getLabel : function (character, row, column) {
-                            return firstSeatLabel++;
+                            return row + '_'+column;
                         },
                     },
                     legend : {
@@ -124,7 +129,7 @@
             });
 
             //let's pretend some seats have already been booked
-            sc.get(['1_2', '4_1', '7_1', '7_2']).status('unavailable');
+            sc.get(['B_2', 'G_1', 'E_1', 'E_2']).status('unavailable');
 
         });
 
@@ -140,4 +145,5 @@
         }
 
     </script>
+    <script src="{{asset("js/booking-data.js")}}"></script>
 @endsection

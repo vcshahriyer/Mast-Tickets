@@ -4,7 +4,7 @@
 <head>
     <!--- Basic Page Needs  -->
     <meta charset="utf-8">
-    <title>Home One || Grand</title>
+    <title>Mast || Ticket</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
@@ -59,29 +59,14 @@
             <div class="row">
                 <div class="col-md-2">
                     <div class="h3-logo">
-                        <a href="index-3.html"><img src="img/home1/logo.png" alt=""></a>
+                        <a href="{{route("Home")}}"><img src="img/home1/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-10 hidden-sm hidden-xs">
                     <div class="menu-area-3 main-menu">
                         <nav>
                             <ul class="menu">
-                                <li class="active"><a href="index.html">Home</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">Home One</a>
-                                        </li>
-                                        <li><a href="index-2.html">Home Two</a></li>
-                                        <li><a href="index-3.html">Home Three</a></li>
-                                        <li><a href="index-4.html">Home Four</a>
-                                            <ul class="tlevel-menu">
-                                                <li><a href="#">Demo</a></li>
-                                                <li><a href="#">Demo</a></li>
-                                                <li><a href="#">Demo</a></li>
-                                                <li><a href="#">Demo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li class="active"><a href="{{route("Home")}}">Home</a></li>
                                 <li><a href="blog-standard.html">Blog</a>
                                     <ul class="dropdown">
                                         <li><a href="blog-standard.html">Blog Standard</a></li>
