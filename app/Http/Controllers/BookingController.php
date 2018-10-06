@@ -47,9 +47,14 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+	    $validatedData = $request->validate([
+		    'from' => 'required|alpha|max:25',
+		    'to' => 'required|alpha|max:25',
+		    'date' => 'required|Date'
+	    ]);
+        return dd($request->all());
     }
 
     /**

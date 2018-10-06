@@ -12,26 +12,36 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="reservation-hero">
-                        <h2 class="rh-title">Reservation</h2>
+                        <h2 class="rh-title">Find a Bus</h2>
                         <div class="reservation-hero-form">
-                            <form action="#">
+                            <form action="{{route("FindBus")}}" method="post">
+                                @csrf
                                 <div class="rhf-input-box">
-                                    <span>Arrival Date</span>
-                                    <input type="text" id="datepicker" placeholder="Date">
+                                    <span>From</span>
+                                    <input name="from" type="text" id="from" placeholder="Enter City">
+                                    @if ($errors->has('from'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('from') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                                 <div class="rhf-input-box">
-                                    <span>Departure Date </span>
-                                    <input type="text" id="datepicker4" placeholder="Date">
+                                    <span>To </span>
+                                    <input name="to" type="text" id="to" placeholder="Enter City">
+                                    @if ($errors->has('to'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('to') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
-                                <div class="rhf-persons-room">
-                                    <div class="rhf-persons">
-                                        <span>Persons </span>
-                                        <input type="number" value="1">
-                                    </div>
-                                    <div class="rhf-room">
-                                        <span>Room</span>
-                                        <input type="number" value="1">
-                                    </div>
+                                <div class="rhf-input-box i-date">
+                                    <span>Date of Journey </span>
+                                    <input name="date" type="text" id="datepicker" placeholder="Date">
+                                    @if ($errors->has('date'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                                 <div class="rhf-send">
                                     <button><i class="fa fa-check"></i></button>

@@ -44,8 +44,8 @@
                 $total = $('#total'),
                 sc = $('#seat-map').seatCharts({
                     map: [
-                        'ff_ff',
-                        'ff_ff',
+                        'ee_ee',
+                        'ee_ee',
                         'ee_ee',
                         'ee_ee',
                         'ee___',
@@ -56,11 +56,6 @@
                         'eeeee',
                     ],
                     seats: {
-                        f: {
-                            price   : 100,
-                            classes : 'first-class', //your custom CSS class
-                            category: 'First Class'
-                        },
                         e: {
                             price   : 40,
                             classes : 'economy-class', //your custom CSS class
@@ -71,6 +66,7 @@
                     naming : {
                         top : false,
                         rows: ['A', 'B', 'C', 'D', 'E','F','G','H','I','J'],
+                        columns: ['1', '2', '5', '3', '4','5'],
 
                         getLabel : function (character, row, column) {
                             return row + '_'+column;
@@ -79,7 +75,6 @@
                     legend : {
                         node : $('#legend'),
                         items : [
-                            [ 'f', 'available',   'First Class' ],
                             [ 'e', 'available',   'Economy Class'],
                             [ 'f', 'unavailable', 'Already Booked']
                         ]

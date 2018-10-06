@@ -47,9 +47,14 @@ div.seatCharts-seat {
 div.seatCharts-row {
 	height: 45px;
 }
-div.seatCharts-seat.available {
-	background-color: #B9DEA0;
-
+div.seatCharts-seat {
+    background-image: url(../svg/seate-green.svg);
+    background-color: transparent !important;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -99999px;
+    transition: all .2s ease-in;
 }
 div.seatCharts-seat.available.first-class,
 div.seatCharts-seat.first-class.focused,
@@ -62,27 +67,52 @@ div.seatCharts-seat.first-class.selected{
     text-indent: -99999px;
     transition: all .2s ease-in;
 }
-div.seatCharts-seat.first-class.focused{
+div.seatCharts-seat.first-class.focused,
+div.seatCharts-seat.focused{
     background-image: url(../svg/seate-red2.svg);
+    background-color: transparent;
 }
-div.seatCharts-seat.first-class.selected{
+div.seatCharts-seat.first-class.selected,
+div.seatCharts-seat.selected{
     background-image: url(../svg/seate-red.svg);
-}
-div.seatCharts-seat.focused {
-	background-color: #76B474;
 }
 div.seatCharts-seat.selected {
 	background-color: #E6CAC4;
 }
 div.seatCharts-seat.unavailable {
-	background-color: #472B34;
+	/*background-color: #4c4c4c;*/
+    background-image: url("../svg/seate-blue.svg");
+	text-indent: -99999px;
 }
 div.seatCharts-container {
 	border-right: 1px dotted #adadad;
-    width: 50%;
+    width: 30%;
+    margin-left: 20%;
 	padding: 20px;
 	float: left;
 }
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+    div.seatCharts-container {
+        margin-left: 0;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 991px) and (min-width: 654px){
+    div.seatCharts-container {
+        width: unset;
+        margin-left: 12%;
+    }
+}
+@media screen and (max-width: 653px) and (min-width: 320px){
+    div.seatCharts-container {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+    }
+    div.seatCharts-legend {bottom: 77px !important;}
+}
+
 div.seatCharts-legend {
 	padding-left: 0px;
 	position: absolute;

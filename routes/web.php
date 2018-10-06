@@ -20,3 +20,7 @@ Route::get('/booking', function () {
 	return view('Booking.booking-form');
 })->name("Booking");
 Route::post("/booked",'BookingController@booked');
+Route::post('/findBus', [
+	'as' => 'FindBus',
+	'uses' => 'BookingController@show'
+]);
