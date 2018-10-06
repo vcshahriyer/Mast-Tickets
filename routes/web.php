@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('Home');
-})->name("Home");
+    return view('Home');})->name("Home");
 
 Auth::routes();
+
 Route::get('/booking', function () {
-	return view('Booking.booking-form');
-})->name("Booking");
+    return view('Booking.booking-form');})->name("Booking");
+
 Route::post("/booked",'BookingController@booked');

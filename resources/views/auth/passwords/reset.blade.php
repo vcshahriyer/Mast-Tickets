@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<!--
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -61,5 +59,51 @@
             </div>
         </div>
     </div>
-</div>
+</div>  -->
+
+
+@extends('Master')
+
+@section('css')
+<link href="css/login.css" rel='stylesheet' type='text/css' media="all" />
+<link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+@endsection
+
+@section('content')
+<div class="wrapper">
+    <div class="form-w3ls">
+        <div class="form-head-w3l">
+            <h2>M</h2>
+        </div>
+        <div class="tab-content">
+            <div id="signup-agile">   
+                    <form action="{{ route('password.update') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="token" value="{{ $token }}">
+                        <p class="header">Email Address</p>
+                        <input id="email" type="email" class="{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="required">
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+
+                        <p class="header">Password</p>
+                        <input id="password" type="password" class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="required">
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+
+                        <p class="header">Confirm Password</p>
+                        <input type="password" name="password" placeholder="Confirm Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="required">
+                        
+                        <input type="submit" class="register" value="Reset Password">
+                    </form>
+                </div> 
+        </div><!-- tab-content -->
+    </div>
+</div> <!-- /form -->	  
+<!-- js files -->
 @endsection
