@@ -5456,6 +5456,10 @@ header {
     padding: 11px 35px;
 }
 span.invalid-feedback {
+    clear: both;
+    display: block;
+    font-size: 16px;
     margin: 10px 0px;
     color: #e24658;
+    text-align: left;
 }

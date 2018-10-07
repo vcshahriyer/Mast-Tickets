@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('Home');})->name("Home");
 
 Auth::routes();
-
+Route::get('logout', array(
+	'as' => 'logout',
+	'uses' => '\App\Http\Controllers\Auth\LoginController@logout'
+));
 Route::get('/booking', function () {
     return view('Booking.booking-form');})->name("Booking");
 
