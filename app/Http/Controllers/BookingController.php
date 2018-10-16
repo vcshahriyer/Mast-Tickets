@@ -30,6 +30,10 @@ class BookingController extends Controller
         //
     }
 
+    public function search(){
+    	return view("Booking.search-table");
+    }
+
     /**
      * Store a newly created resource in storage.
      *

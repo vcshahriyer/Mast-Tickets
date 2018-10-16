@@ -27,3 +27,7 @@ Route::post('/findBus', [
 	'as' => 'FindBus',
 	'uses' => 'BookingController@show'
 ]);
+Route::get('/booking/table', [
+	'as' => 'book.search',
+	'uses' => 'BookingController@search'
+]);
