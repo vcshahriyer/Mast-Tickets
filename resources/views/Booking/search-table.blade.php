@@ -42,216 +42,22 @@
                 <div class="table-body js-pscroll">
                     <table>
                         <tbody>
+                        @foreach($buses as $bus)
                         <tr>
                             <td class=" column1">
-                                <p>Relax Transport Ltd.</p>
-                                <p>6, Hyundai Universe, AC Hyundai Universe Noble</p>
-                                <p>Route: Dhaka - Chittagong</p>
+                                <p>{{$bus->company_name}}</p>
+                                <p>{{$bus->bus_model}} {{$bus->bus_type}}</p>
+                                <p>Route: {{$bus->route_from}} - {{$bus->route_to}}</p>
                             </td>
-                            <td class=" column2">9:00 AM</td>
-                            <td class=" column3">11:00 AM</td>
-                            <td class=" column4">25</td>
+                            <td class=" column2">{{date('h:i A', strtotime($bus->dept_time))}}</td>
+                            <td class=" column3">{{date('h:i A', strtotime($bus->arr_time))}}</td>
+                            <td class=" column4">{{$bus->seats - $bus->booked_seats}}</td>
                             <td class=" column5">
-                                <span class="price">700</span>
-                                <button class="btnbook">View Seats</button>
+                                <span class="price">{{$bus->fare}}</span>
+                                <a href="#" class="btnbook">View Seats</a>
                             </td>
                         </tr>
-
-                        <tr>
-                            <td class=" column1">
-                                <p>Relax Transport Ltd.</p>
-                                <p>6, Hyundai Universe, AC Hyundai Universe Noble</p>
-                                <p>Route: Dhaka - Chittagong</p>
-                            </td>
-                            <td class=" column2">9:00 AM</td>
-                            <td class=" column3">11:00 AM</td>
-                            <td class=" column4">25</td>
-                            <td class=" column5">
-                                <span class="price">700</span>
-                                <button class="btnbook">View Seats</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">
-                                <p>Relax Transport Ltd.</p>
-                                <p>6, Hyundai Universe, AC Hyundai Universe Noble</p>
-                                <p>Route: Dhaka - Chittagong</p>
-                            </td>
-                            <td class=" column2">9:00 AM</td>
-                            <td class=" column3">11:00 AM</td>
-                            <td class=" column4">25</td>
-                            <td class=" column5">
-                                <span class="price">700</span>
-                                <button class="btnbook">View Seats</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">
-                                <p>Relax Transport Ltd.</p>
-                                <p>6, Hyundai Universe, AC Hyundai Universe Noble</p>
-                                <p>Route: Dhaka - Chittagong</p>
-                            </td>
-                            <td class=" column2">9:00 AM</td>
-                            <td class=" column3">11:00 AM</td>
-                            <td class=" column4">25</td>
-                            <td class=" column5">
-                                <span class="price">700</span>
-                                <button class="btnbook">View Seats</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">
-                                <p>Relax Transport Ltd.</p>
-                                <p>6, Hyundai Universe, AC Hyundai Universe Noble</p>
-                                <p>Route: Dhaka - Chittagong</p>
-                            </td>
-                            <td class=" column2">9:00 AM</td>
-                            <td class=" column3">11:00 AM</td>
-                            <td class=" column4">25</td>
-                            <td class=" column5">
-                                <span class="price">700</span>
-                                <button class="btnbook">View Seats</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Zumba Dance</td>
-                            <td class=" column2">Dance</td>
-                            <td class=" column3">5:00 PM - 7:00 PM</td>
-                            <td class=" column4">Donna Wilson</td>
-                            <td class=" column5">20</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Cardio Blast</td>
-                            <td class=" column2">Gym</td>
-                            <td class=" column3">5:00 PM - 7:00 PM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">10</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Pilates Reformer</td>
-                            <td class=" column2">Gym</td>
-                            <td class=" column3">8:00 AM - 9:00 AM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">10</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Supple Spine and Shoulders</td>
-                            <td class=" column2">Yoga</td>
-                            <td class=" column3">6:30 AM - 8:00 AM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">15</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Yoga for Divas</td>
-                            <td class=" column2">Yoga</td>
-                            <td class=" column3">9:00 AM - 11:00 AM</td>
-                            <td class=" column4">Donna Wilson</td>
-                            <td class=" column5">20</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Virtual Cycle</td>
-                            <td class=" column2">Gym</td>
-                            <td class=" column3">8:00 AM - 9:00 AM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">20</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Like a butterfly</td>
-                            <td class=" column2">Boxing</td>
-                            <td class=" column3">9:00 AM - 11:00 AM</td>
-                            <td class=" column4">Aaron Chapman</td>
-                            <td class=" column5">10</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Mind & Body</td>
-                            <td class=" column2">Yoga</td>
-                            <td class=" column3">8:00 AM - 9:00 AM</td>
-                            <td class=" column4">Adam Stewart</td>
-                            <td class=" column5">15</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Crit Cardio</td>
-                            <td class=" column2">Gym</td>
-                            <td class=" column3">9:00 AM - 10:00 AM</td>
-                            <td class=" column4">Aaron Chapman</td>
-                            <td class=" column5">10</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Wheel Pose Full Posture</td>
-                            <td class=" column2">Yoga</td>
-                            <td class=" column3">7:00 AM - 8:30 AM</td>
-                            <td class=" column4">Donna Wilson</td>
-                            <td class=" column5">15</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Playful Dancer's Flow</td>
-                            <td class=" column2">Yoga</td>
-                            <td class=" column3">8:00 AM - 9:00 AM</td>
-                            <td class=" column4">Donna Wilson</td>
-                            <td class=" column5">10</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Zumba Dance</td>
-                            <td class=" column2">Dance</td>
-                            <td class=" column3">5:00 PM - 7:00 PM</td>
-                            <td class=" column4">Donna Wilson</td>
-                            <td class=" column5">20</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Cardio Blast</td>
-                            <td class=" column2">Gym</td>
-                            <td class=" column3">5:00 PM - 7:00 PM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">10</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Pilates Reformer</td>
-                            <td class=" column2">Gym</td>
-                            <td class=" column3">8:00 AM - 9:00 AM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">10</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Supple Spine and Shoulders</td>
-                            <td class=" column2">Yoga</td>
-                            <td class=" column3">6:30 AM - 8:00 AM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">15</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Yoga for Divas</td>
-                            <td class=" column2">Yoga</td>
-                            <td class=" column3">9:00 AM - 11:00 AM</td>
-                            <td class=" column4">Donna Wilson</td>
-                            <td class=" column5">20</td>
-                        </tr>
-
-                        <tr>
-                            <td class=" column1">Virtual Cycle</td>
-                            <td class=" column2">Gym</td>
-                            <td class=" column3">8:00 AM - 9:00 AM</td>
-                            <td class=" column4">Randy Porter</td>
-                            <td class=" column5">20</td>
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

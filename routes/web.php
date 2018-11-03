@@ -25,9 +25,13 @@ Route::get('/booking', function () {
 Route::post("/booked",'BookingController@booked');
 Route::post('/findBus', [
 	'as' => 'FindBus',
-	'uses' => 'BookingController@show'
-]);
-Route::get('/booking/table', [
-	'as' => 'book.search',
 	'uses' => 'BookingController@search'
+]);
+Route::get('/mytickets', [
+	'as' => 'my-tickets',
+	'uses' => 'BookingController@myTickets'
+]);
+Route::post('/FindMyTickets', [
+	'as' => 'Find-tickets',
+	'uses' => 'BookingController@findTickets'
 ]);

@@ -62,7 +62,7 @@
                         <nav>
                             <ul class="menu">
                                 <li class="active"><a href="{{route("Home")}}">Home</a></li>
-                                <li><a href="{{route("Booking")}}">Booking</a></li>
+                                <li><a href="{{route("my-tickets")}}">My Tickets</a></li>
                                 <li><a href="#">Gallery</a></li>
                                 <li><a href="#">Companies</a>
                                     <ul class="dropdown">

@@ -822,6 +822,14 @@ header {
     right: 16px;
     top: 38px;
 }
+.rhf-input-box.query::after {
+    content: "\f2bc";
+    font-family: FontAwesome;
+    position: absolute;
+    right: 16px;
+    top: 38px;
+    color: #fff;
+}
 .rhf-input-box.i-date::after{
     content: "\f073";
     font-family: FontAwesome;
@@ -3940,6 +3948,9 @@ span.invalid-feedback {
 .table-body tr:nth-child(even) {
     background-color: #f8f6ff;
 }
+.ticket_view tr td{
+    font-size: 16px;
+}
 .column1 {
     width: 33%;
     padding-left: 40px;
@@ -3955,7 +3966,10 @@ span.invalid-feedback {
 .column4 {
     width: 19%;
 }
-
+.column3.max-seats{
+    max-width: 100px;
+    overflow: auto;
+}
 .column5 {
     width: 13%;
     text-align: center;
