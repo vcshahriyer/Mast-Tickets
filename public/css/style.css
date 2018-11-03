@@ -3974,3 +3974,9 @@ span.invalid-feedback {
     width: 13%;
     text-align: center;
 }
+
+.customer h2{
+    text-align: center;
+    color:darkcyan;
+    margin-bottom: 3%;
+}

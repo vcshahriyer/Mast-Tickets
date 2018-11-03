@@ -1,12 +1,9 @@
 @extends("Master")
 
-@section("css")
-    <link rel="stylesheet" href="{{asset("css/search-table.css")}}">
-@endsection
 @section("content")
     <div class="wrapper">
         <div class="container">
-            <div class="h3-pick-section-title"><h2>User : {{$name->cs_name}}</h2></div>
+            <div class="customer"><h2>Customer : {{$name->cs_name}}</h2></div>
             <div class="table-wrap">
                 <div class="table-head">
                     <table>
