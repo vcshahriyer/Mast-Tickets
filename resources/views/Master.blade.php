@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="{{ asset('css/icofont.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/meanmenu.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
@@ -64,7 +62,7 @@
                         <nav>
                             <ul class="menu">
                                 <li class="active"><a href="{{route("Home")}}">Home</a></li>
-                                <li><a href="{{route("Booking")}}">Booking</a></li>
+                                <li><a href="{{route("my-tickets")}}">My Tickets</a></li>
                                 <li><a href="#">Gallery</a></li>
                                 <li><a href="#">Companies</a>
                                     <ul class="dropdown">
@@ -91,68 +89,13 @@
                     <div class="mobile_menu">
                         <nav id="mobile_menu_active">
                             <ul class="menu">
-                                <li><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Home One</a>
-                                        </li>
-                                        <li><a href="index-2.html">Home Two</a></li>
-                                        <li><a href="index-3.html">Home Three</a></li>
-                                        <li><a href="index-4.html">Home Four</a>
-                                            <ul>
-                                                <li><a href="#">Demo</a></li>
-                                                <li><a href="#">Demo</a></li>
-                                                <li><a href="#">Demo</a></li>
-                                                <li><a href="#">Demo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog-standard.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-standard.html">Blog Standard</a></li>
-                                        <li><a href="blog-standard-2.html">Blog Standard 2</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="gallery-standard.html">Gallery</a>
-                                    <ul>
-                                        <li><a href="gallery-standard.html">Gallery Standard</a></li>
-                                        <li><a href="gallery-masonary.html">Gallery Masonary</a></li>
-                                        <li><a href="gallery-full-width.html">Gallery Full Width</a></li>
-                                        <li><a href="gallery-details.html">Gallery Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="rooms.html">Rooms</a>
-                                    <ul>
-                                        <li><a href="rooms.html">Rooms</a></li>
-                                        <li><a href="rooms-2.html">Rooms 2</a></li>
-                                        <li><a href="rooms-details.html">Rooms Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="service.html">Service</a>
-                                    <ul>
-                                        <li><a href="service.html">Service</a></li>
-                                        <li><a href="service-details.html">Service Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="staff.html">Staff</a>
-                                    <ul>
-                                        <li><a href="staff.html">Staff</a></li>
-                                        <li><a href="staff-details.html">Staff Details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="active"><a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="choose-date.html">Choose Date</a></li>
-                                        <li><a href="choose-room.html">Choose Room</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="contact-2.html">Contact 2</a></li>
-                                        <li><a href="make-payment.html">Make Payment</a></li>
-                                        <li><a href="make-payment-confirmation.html">Make Payment Confrimation</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{route("Home")}}">Home</a></li>
+                                <li><a href="{{route("Booking")}}">Booking</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Companies</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li class="active"><a href="#">Contact Us</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -170,8 +113,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/countdown.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jquery.meanmenu.js"></script>
     <script src="js/jquery.scrollUp.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
