@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     @yield("css")
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="img/icon/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="{{asset('img/mast-ticket.png')}}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
