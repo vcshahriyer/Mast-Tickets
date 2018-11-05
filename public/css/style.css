@@ -3934,7 +3934,7 @@ span.invalid-feedback {
     width: 100%;
 }
 .table-head table th{
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     line-height: 1.4;
     background-color: #6c7ae0;
@@ -3942,7 +3942,7 @@ span.invalid-feedback {
     padding-bottom: 18px;
 }
 .table-body td {
-    padding-top: 16px;
+    padding-top: 14px;
     padding-bottom: 16px;
 }
 .table-body tr:nth-child(even) {
@@ -3952,15 +3952,16 @@ span.invalid-feedback {
     font-size: 16px;
 }
 .column1 {
-    width: 33%;
+    width: 24%;
     padding-left: 40px;
 }
 .column2 {
-    width: 13%;
+    width: 15%;
 }
 
 .column3 {
     width: 22%;
+    padding-left: 22px;
 }
 
 .column4 {

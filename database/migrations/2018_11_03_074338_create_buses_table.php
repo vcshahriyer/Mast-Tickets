@@ -15,7 +15,7 @@ class CreateBusesTable extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('company_name');
+            $table->integer('company_id')->unsigned();
             $table->string('bus_model');
             $table->string('bus_type');
             $table->string('route_from');
@@ -24,7 +24,8 @@ class CreateBusesTable extends Migration
             $table->time('arr_time');
             $table->integer('seats');
             $table->integer('fare');
-            $table->timestamps();
+	        $table->foreign('company_id')->references('id')->on('companies');
+	        $table->timestamps();
         });
     }
 

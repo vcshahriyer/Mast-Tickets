@@ -24,7 +24,7 @@
                     @foreach($tickets as $ticket)
                         <tr>
                             <td class=" column1">
-                                <p>{{$ticket->company_name}}</p>
+                                <p>{{$ticket->name}}</p>
                                 <p>{{$ticket->bus_model}} {{$ticket->bus_type}}</p>
                                 <p>Route: {{$ticket->route_from}} - {{$ticket->route_to}}</p>
                             </td>

@@ -31,7 +31,7 @@
                         <thead>
                         <tr class=" head">
                             <th class="column1">Operator (Bus Type)</th>
-                            <th class="column2">Dep. Time</th>
+                            <th class="column2">Dep.Date & Time</th>
                             <th class="column3">Arr. Time</th>
                             <th class="column4">Seats Available</th>
                             <th class="column5">Fare</th>
@@ -45,14 +45,21 @@
                         @foreach($buses as $bus)
                         <tr>
                             <td class=" column1">
-                                <p>{{$bus->company_name}}</p>
+                                <p>{{$bus->name}}</p>
                                 <p>{{$bus->bus_model}} {{$bus->bus_type}}</p>
                                 <p>Route: {{$bus->route_from}} - {{$bus->route_to}}</p>
                             </td>
-                            <td class=" column2">{{date('h:i A', strtotime($bus->dept_time))}}</td>
+                            <td class=" column2"> <p>{{date('d-m-Y',strtotime($dept_date))}}</p> {{date('h:i A', strtotime($bus->dept_time))}}</td>
                             <td class=" column3">{{date('h:i A', strtotime($bus->arr_time))}}</td>
-                            <td class=" column4">{{$bus->seats - $bus->booked_seats}}</td>
-                            <td class=" column5">
+                            @foreach($booked_seat as $booked)
+                                @if($booked->bus_id == $bus->bus_id)
+                                    <td class=" column4">{{$total = $bus->seats - $booked->total_booked}}</td>
+                                @endif
+                            @endforeach
+                            @if(!isset($total))
+                                <td class=" column4">{{$bus->seats}}</td>
+                            @endif
+                                <td class=" column5">
                                 <span class="price">{{$bus->fare}}</span>
                                 <a href="#" class="btnbook">View Seats</a>
                             </td>

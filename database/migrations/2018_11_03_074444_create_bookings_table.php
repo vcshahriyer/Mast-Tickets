@@ -22,7 +22,7 @@ class CreateBookingsTable extends Migration
             $table->string('pay_status');
             $table->string('cs_name');
             $table->string('cs_mobile');
-	        $table->string('cs_email')->unique();
+	        $table->string('cs_email');
 	        $table->string('cs_pass');
 	        $table->timestamps();
 	        $table->foreign('bus_id')->references('id')->on('buses');
