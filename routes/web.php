@@ -35,3 +35,9 @@ Route::post('/FindMyTickets', [
 	'as' => 'Find-tickets',
 	'uses' => 'BookingController@findTickets'
 ]);
+Route::group(array('prefix' => 'admin','middleware' =>'auth'), function () {
+	Route::get('/dashboard',function (){
+		return view('dashboard.main');
+	})->name("dashboard");
+//	Route::get('users', 'UsersController@index')->name("users");
+});

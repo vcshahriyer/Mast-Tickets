@@ -42,7 +42,7 @@
     @if (Route::has('login'))
     <div class="login">
         @auth
-        <a href="#">{{str_limit(Auth::user()->name,15)}}</a>
+        <a href="{{route('dashboard')}}">{{str_limit(Auth::user()->name,15)}}</a>
         <a href="{{route("logout")}}">Log Out</a>
         @else
         <a href="{{ route('register') }}">Sign Up</a>
