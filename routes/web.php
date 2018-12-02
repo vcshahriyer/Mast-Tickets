@@ -19,8 +19,12 @@ Route::get('logout', array(
 	'as' => 'logout',
 	'uses' => '\App\Http\Controllers\Auth\LoginController@logout'
 ));
+Route::get('/register/company', function (){
+    return view('auth.company-register');
+})->name("create.company");
 Route::get('/booking', function () {
-    return view('Booking.booking-form');})->name("Booking");
+    return view('Booking.booking-form');
+})->name("Booking");
 
 Route::post("/booked",'BookingController@booked');
 Route::post('/findBus', [

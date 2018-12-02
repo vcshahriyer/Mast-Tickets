@@ -45,7 +45,7 @@
         <a href="{{route('dashboard')}}">{{str_limit(Auth::user()->name,15)}}</a>
         <a href="{{route("logout")}}">Log Out</a>
         @else
-        <a href="{{ route('register') }}">Sign Up</a>
+        <a href="{{ route('create.company') }}">Sign Up</a>
         <a href="{{ route('login') }}">Sign In</a>
         @endauth
     </div>
