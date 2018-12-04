@@ -19,9 +19,21 @@ class BookingController extends Controller
     {
         //
     }
-	public function booked( Request $request){
-		$data = $request->json()->all();
-		return response()->json(['success'=>$data]);
+	public function view_seats( Request $request,$date,$id){
+//		$data = $request->json()->all();
+//		return response()->json(['success'=>$data]);
+        $company = DB::table('buses')
+                ->join('companies','buses.company_id','companies.id')
+                ->select('companies.name')
+                ->where('buses.company_id','=',$id)
+                ->first();
+        $booked_seat = DB::table('bookings as b')
+            ->where('b.dept_date','=',$date)
+            ->where('b.bus_id',$id)
+            ->select('b.dept_date','b.bus_id', DB::raw('GROUP_CONCAT(b.my_seats SEPARATOR \',\') as seats'))
+            ->groupBy('b.dept_date','b.bus_id')
+            ->first();
+        return view('Booking.booking-form',['company'=>$company,'booked_seat'=>$booked_seat]);
 	}
 
     /**

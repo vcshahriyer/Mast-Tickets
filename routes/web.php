@@ -22,9 +22,10 @@ Route::get('logout', array(
 Route::get('/register/company', function (){
     return view('auth.company-register');
 })->name("create.company");
-Route::get('/booking', function () {
-    return view('Booking.booking-form');
-})->name("Booking");
+Route::get('/booking/{date}/{id}', [
+    'as' => 'booking',
+    'uses' => 'BookingController@view_seats'
+]);
 
 Route::post("/booked",'BookingController@booked');
 Route::post('/findBus', [

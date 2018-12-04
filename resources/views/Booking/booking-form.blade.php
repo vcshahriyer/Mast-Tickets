@@ -9,12 +9,16 @@
         <div class="container">
             <div class="alert alert-success" style="display:none"></div>
             <div id="seat-map">
-                <div class="front-indicator">Front</div>
+                <div class="front-indicator">{{$company->name}}</div>
 
             </div>
             <div class="booking-details">
                 <h2>Booking Details</h2>
-
+                @if(isset($booked_seat))
+                @php
+                    $seats = explode(",",$booked_seat->seats);
+                @endphp
+                @endif
                 <h3> Selected Seats (<span id="counter">0</span>):</h3>
                 @csrf
                 <ul id="selected-seats"></ul>
@@ -124,7 +128,13 @@
             });
 
             //let's pretend some seats have already been booked
-            sc.get(['B_2', 'G_1', 'E_1', 'E_2']).status('unavailable');
+            sc.get([
+            @if(isset($booked_seat))
+                @foreach($seats as $seat)
+                {!! '\''.$seat.'\',' !!}
+                @endforeach
+            @endif
+            ]).status('unavailable');
 
         });
 
