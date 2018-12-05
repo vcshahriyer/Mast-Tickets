@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 05, 2018 at 05:59 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Host: 127.0.0.1
+-- Generation Time: Dec 05, 2018 at 02:56 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Mast_ticket`
+-- Database: `mast_ticket`
 --
 
 -- --------------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`id`, `bus_id`, `dept_date`, `my_seats`, `booked_seats`, `pay_status`, `cs_name`, `cs_mobile`, `cs_email`, `cs_pass`, `created_at`, `updated_at`) VALUES
-(1, 1, '2018-11-06', 'A1,A2,B1,B2', '3', 'false', 'Raghib Shahriyer', '01638414864', 'vcshahriyer@gmail.com', 'admin', NULL, NULL),
+(1, 1, '2018-12-07', 'A_1,A_2,B_1,B_2', '3', 'false', 'Raghib Shahriyer', '01638414864', 'vcshahriyer@gmail.com', 'admin', NULL, NULL),
 (2, 2, '2018-11-07', 'A1,A2', '2', 'false', 'Sohag Rana', '01638414865', 'sohag@gmail.com', 'admin', NULL, NULL),
 (3, 1, '2018-11-06', 'A3,B3', '2', 'false', 'Sohag Rana', '01638414865', 'sohag@gmail.com', 'admin', NULL, NULL),
 (4, 2, '2018-11-06', 'A3', '1', 'false', 'Raghib Shahriyer', '01638414864', 'vcshahriyer@gmail.com', 'admin', NULL, NULL),
@@ -93,6 +93,7 @@ CREATE TABLE `companies` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `owner` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -101,9 +102,13 @@ CREATE TABLE `companies` (
 -- Dumping data for table `companies`
 --
 
-INSERT INTO `companies` (`id`, `name`, `owner`, `created_at`, `updated_at`) VALUES
-(1, 'Hanif Enterprise', 'Mr. Sirajul Islam Hanif', NULL, NULL),
-(2, 'Shyamoli NR Travels', 'Ganesh Chandra Ghosh', NULL, NULL);
+INSERT INTO `companies` (`id`, `name`, `owner`, `address`, `created_at`, `updated_at`) VALUES
+(1, 'Hanif Enterprise', 'Mr. Sirajul Islam Hanif', '', NULL, NULL),
+(2, 'Shyamoli NR Travels', 'Ganesh Chandra Ghosh', '', NULL, NULL),
+(3, 'Orchid', 'Rana', '', '2018-12-03 14:09:42', '2018-12-03 14:09:42'),
+(4, 'Orchid', 'Rana', '', '2018-12-03 14:15:48', '2018-12-03 14:15:48'),
+(5, 'mast', 'Raghib shahriyer', '', '2018-12-05 03:11:55', '2018-12-05 03:11:55'),
+(6, 'mast', 'Raghib shahriyer', 'badda', '2018-12-05 07:22:25', '2018-12-05 07:22:25');
 
 -- --------------------------------------------------------
 
@@ -127,7 +132,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (27, '2018_11_03_074246_create_companies_table', 1),
 (28, '2018_11_03_074338_create_buses_table', 1),
 (29, '2018_11_03_074429_create_statuses_table', 1),
-(30, '2018_11_03_074444_create_bookings_table', 1);
+(30, '2018_11_03_074444_create_bookings_table', 1),
+(31, '2018_12_02_112616_create_compamies_table', 2),
+(32, '2018_12_02_120313_add_address_to_companies', 3),
+(33, '2018_12_02_121434_add_address_to_companies', 4),
+(34, '2018_12_02_122000_add_company_to_users', 5),
+(35, '2018_12_05_125926_add_company_image_to_users', 6),
+(36, '2018_12_05_130123_add_address_to_companies', 6);
 
 -- --------------------------------------------------------
 
@@ -174,6 +185,8 @@ INSERT INTO `statuses` (`id`, `bus_id`, `available`, `from`, `till`, `created_at
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -181,6 +194,18 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `image`, `company`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'Orchid Sohag', '', '', 'Orchid@rana.com', NULL, '$2y$10$Whd8YrrCPnRIKJwikdNpQ.oyYhW1GaujG4SJahQZW2k9E29kN6DDK', 'eLRDDAxod021BWNwHTtdtnQZglU1W9fmkV6swDgKvXxPfLrLFApNAtxSvQ4x', '2018-12-03 13:43:11', '2018-12-03 13:43:11'),
+(4, 'Sohag', '', '', 'Shg@ranaa.com', NULL, '$2y$10$Mqfx51hOEDeUpsKm.NP3l.H9JIgts6/xJgVu1hQg0ynqWGXieEDK2', NULL, '2018-12-03 14:06:19', '2018-12-03 14:06:19'),
+(5, 'Sohag', '', '', 'Shgg@rana.com', NULL, '$2y$10$INpoFkAbIXgh30Yp.DdR6.f/8eXvRMYjbsMbjtY1frclKv0M7DuCO', '5fHr9Kq29MWB7IifumT7egqL8xB0JqwGQDRoXJjDlBVViEnJ1CfqG3J9cy1k', '2018-12-03 14:09:42', '2018-12-03 14:09:42'),
+(6, 'Sohag', '', '', 'Shhg@rana.com', NULL, '$2y$10$D9ITn1/p12zd8uSnkCdhrOr9TgP3SkOKOqQOyymX9CKJIZCwYn1se', 'HzKCX3AIyCYs4arv4K6t2b2efYkbgFLn6LZMpCgLnf9wSskHdEzg4HCaCkOp', '2018-12-03 14:15:48', '2018-12-03 14:15:48'),
+(7, 'Raghib', '', '', 'raghib@rana.com', NULL, '$2y$10$zdc.j4uO1braf7IkY2Uw8OncNGuiWj57sTXba/MVNLeh6J//MUgGC', 'sioR6k8DEGrI0IyVRmqRwMTwoWLZECDCP7SxuWHzi9BcK2v8dJohqLiRF6IS', '2018-12-05 03:11:55', '2018-12-05 03:11:55'),
+(8, 'Sohag', 'img/Users/1544016145image-1465348_960_720.jpg', 'mast', 'raghibb@rana.com', NULL, '$2y$10$4KjN0ELF0wK/n3QcRzplN.ZYTa2vfhQ1Kiqs2u29mxKg4ryjk/iuu', 'gPBtwyuQCMV5gWLyzg5sOksSAlj41rn60YVdfQzhx8hAf0eHcUvfDBybeiYJ', '2018-12-05 07:22:25', '2018-12-05 07:22:25');
 
 --
 -- Indexes for dumped tables
@@ -252,13 +277,13 @@ ALTER TABLE `buses`
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `statuses`
@@ -270,7 +295,7 @@ ALTER TABLE `statuses`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

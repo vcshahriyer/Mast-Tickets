@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Company;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -50,9 +51,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:50',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'company' => 'required|string|max:50',
+            'owner' => 'required|string|max:50',
+            'address' => 'required|string|max:100',
+            'image' =>'required|image|max:1024'
+
         ]);
     }
 
@@ -64,18 +70,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $image = $data['image'];
+        $image_name = time().$image->getClientOriginalName();
+        $image->move('img/Users/',$image_name);
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'company' => $data['company'],
+            'image' =>'img/Users/'.$image_name,
+
         ]);
-    }
-    protected function create_company(Request $request){
-        $validatedData = $request->validate([
-            'name' => 'required|alpha|max:25',
-            'owner' => 'required|alpha|max:25',
-            'address' => 'required|string|max:80'
+
+        Company::create([
+            'name' => $data['company'],
+            'owner' => $data['owner'],
+            'address' => $data['address'],
         ]);
-        dd($request);
+
+        return $user;
     }
 }

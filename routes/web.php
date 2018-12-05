@@ -19,9 +19,7 @@ Route::get('logout', array(
 	'as' => 'logout',
 	'uses' => '\App\Http\Controllers\Auth\LoginController@logout'
 ));
-Route::get('/register/company', function (){
-    return view('auth.company-register');
-})->name("create.company");
+
 Route::get('/booking/{date}/{id}', [
     'as' => 'booking',
     'uses' => 'BookingController@view_seats'
@@ -41,8 +39,6 @@ Route::post('/FindMyTickets', [
 	'uses' => 'BookingController@findTickets'
 ]);
 Route::group(array('prefix' => 'admin','middleware' =>'auth'), function () {
-	Route::get('/dashboard',function (){
-		return view('dashboard.main');
-	})->name("dashboard");
+    Route::get("/dashboard",'DashboardController@home');
 //	Route::get('users', 'UsersController@index')->name("users");
 });
