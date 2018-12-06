@@ -53,22 +53,21 @@ class BookingController extends Controller
 		    'date' => 'required|Date|after:today'
 	    ]);
 	    $from = $request->input('from');
-	    $to = $request->input('to');
-	    $date = $request->input('date');
-	    $buses = DB::table('buses as b')
-	                 ->leftJoin('companies','b.company_id','companies.id')
-	                 ->leftJoin('statuses','b.id','statuses.bus_id')
-	                 ->where('b.route_from','like','%'.$from.'%')
-	                 ->where('b.route_to','like','%'.$to.'%')
-		             ->whereDate('statuses.till','<',Carbon::parse($date)->format('Y-m-d'))
-		             ->orWhere('statuses.available','=','true')
-		             ->get();
-	    $booked_seat = DB::table('bookings as b')
+        $to = $request->input('to');
+        $date = $request->input('date');
+        $buses = DB::table('buses as b')
+            ->leftJoin('companies','b.company_id','companies.id')
+            ->leftJoin('statuses','b.id','statuses.bus_id')
+            ->where('b.route_from','=',$from)
+            ->where('b.route_to','=',$to)
+            ->Where('b.available','=','true')
+            ->get();
+//            ->orwhereDate('statuses.till','<',Carbon::parse($date)->format('Y-m-d'))
+        $booked_seat = DB::table('bookings as b')
 		             ->where('b.dept_date','=',Carbon::parse($date)->format('Y-m-d'))
 		             ->select('b.dept_date','b.bus_id', DB::raw('SUM(b.booked_seats) as total_booked'))
 		             ->groupBy('b.dept_date','b.bus_id')
 	                 ->get();
-//	    dd($booked_seat);
     	return view("Booking.search-table",['buses'=> $buses,'booked_seat'=>$booked_seat,'dept_date'=>$date]);
     }
 	public function myTickets(){

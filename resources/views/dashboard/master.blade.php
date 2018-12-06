@@ -77,7 +77,7 @@
                 <li class="active">
                     <a href="{{route('Home')}}"><i class="menu-icon fa fa-home"></i>Visit Home </a>
                 </li>
-                <li class="menu-title">UI elements</li><!-- /.menu-title -->
+                <li class="menu-title">{{$user->company}}</li><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>
                     <ul class="sub-menu children dropdown-menu">
@@ -102,9 +102,9 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Insertions</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="#">Basic Form</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a href="{{route('Insert-bus')}}">Insert Bus</a></li>
                         <li><i class="menu-icon fa fa-th"></i><a href="#">Advanced Form</a></li>
                     </ul>
                 </li>
@@ -257,6 +257,7 @@
         </div>
     </header><!-- /header -->
     <!-- Header-->
+    @yield('breadcrumbs')
     @yield('content')
     <div class="clearfix"></div>
 

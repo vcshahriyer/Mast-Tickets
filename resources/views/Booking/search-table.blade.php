@@ -62,7 +62,7 @@
                             @if(!isset($total))
                                 <td class="column4 text-center">
                                     {{$bus->seats}}<br>
-                                    <a href="{{route('booking',['id'=>$bus->id,'date'=>date('Y-m-d',strtotime($dept_date))])}}" class="btnbook">View Seats</a>
+                                    <a href="{{route('booking',['date'=>date('Y-m-d',strtotime($dept_date)),'id'=>$bus->company_id])}}" class="btnbook">View Seats</a>
                                 </td>
                             @endif
                                 <td class=" column5">
