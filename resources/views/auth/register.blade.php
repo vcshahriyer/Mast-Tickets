@@ -16,7 +16,7 @@
                     <form action="#" method="post" enctype="multipart/form-data">
                         @csrf
                         <p class="header">User Name</p>
-                        <input type="text" name="name" class="{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" placeholder="Your Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Full Name';}" required="required" value="{{ old('name') }}">
+                        <input type="text" name="name" class="{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Your Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Full Name';}" required="required" value="{{ old('name') }}">
                         @if ($errors->has('name'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('name') }}</strong>
