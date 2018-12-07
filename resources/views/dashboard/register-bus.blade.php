@@ -30,6 +30,11 @@
 @section('content')
 
     <div class="content">
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <div class="animated fadeIn">
             <div class="row">
                 <div class="col-lg-6">

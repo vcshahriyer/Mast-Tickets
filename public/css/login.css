@@ -146,6 +146,36 @@ h1 {
 .tab-content {
 	padding-top: 15%;
 }
+.inputfile {
+	width: 100%;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+	fill: currentColor;
+	margin-top: -0.25em;
+	margin-right: 0.25em;
+}
+.inputfile + label {
+	max-width: 100%;
+	font-size: 16px;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	padding: 1em 0 .5em;
+	margin-bottom: 1em;
+	float: left;
+	border-bottom: 2px solid darkred;
+}
+
 
 /*-- Sign In Form --*/
 p.header {

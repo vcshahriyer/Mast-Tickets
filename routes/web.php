@@ -42,5 +42,6 @@ Route::group(array('prefix' => 'admin','middleware' =>'auth'), function () {
     Route::get("/dashboard",'DashboardController@home')->name('dashboard');
     Route::get('/insertbus', 'DashboardController@busInsertForm')->name("Insert-bus");
     Route::post('/insertbus', 'DashboardController@busInsert')->name("register-bus");
+    Route::get('/viewBus', 'BusController@index')->name("view-bus");
 //	Route::get('users', 'UsersController@index')->name("users");
 });
