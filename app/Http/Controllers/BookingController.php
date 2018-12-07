@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Bus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Booking;
 use App\Company;
-use function PHPSTORM_META\type;
+use Illuminate\Support\Facades\Hash;
 
 class BookingController extends Controller
 {
@@ -23,7 +24,7 @@ class BookingController extends Controller
 	public function view_seats( Request $request,$date,$cid,$bid){
         $buses = DB::table('buses')
                 ->join('companies','buses.company_id','companies.id')
-                ->select('companies.name','buses.fare')
+                ->select('companies.name','buses.fare','buses.id')
                 ->where('buses.company_id','=',$cid)
                 ->where('buses.id','=',$bid)
                 ->first();
@@ -33,7 +34,7 @@ class BookingController extends Controller
             ->select('b.dept_date','b.bus_id', DB::raw('GROUP_CONCAT(b.my_seats SEPARATOR \',\') as seats'))
             ->groupBy('b.dept_date','b.bus_id')
             ->first();
-        return view('Booking.booking-form',['buses'=>$buses,'booked_seat'=>$booked_seat]);
+        return view('Booking.booking-form',['buses'=>$buses,'booked_seat'=>$booked_seat,'date'=>$date]);
 	}
 
     /**
@@ -93,10 +94,41 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function process(Request $request)
     {
-        $data = $request->json()->all();
-        return response()->json(['success'=>$data]);
+//        $data = $request->json()->all();
+//        return response()->json(['success'=>$data]);
+    }
+    public function store (Request $request){
+        $validatedData = $request->validate([
+            'seats' => 'required|string|max:200',
+            'name'  => 'required|string|max:50',
+            'bus_id' => 'required|numeric',
+            'date' => 'required|Date',
+            'email' => 'required|string|max:200',
+            'phone' => 'required|regex:/(01)[0-9]{9}/',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+        $temp = explode(",",$request->seats);
+        $total = count($temp)-1;
+        $temp2 = DB::table('buses as b')
+            ->select('b.id')
+            ->where('b.id','=',$request->bus_id)
+            ->first();
+        $busID =$temp2->id;
+        $booking  = new Booking;
+        $booking->bus_id = $busID;
+        $booking->dept_date = $request->date;
+        $booking->my_seats = $request->seats;
+        $booking->booked_seats = $total;
+        $booking->pay_status = 'false';
+        $booking->cs_name = $request->name;
+        $booking->cs_mobile = $request->phone;
+        $booking->cs_email = $request->phone;
+        $booking->cs_pass = Hash::make($request->password);
+        $booking->save();
+
+        return redirect()->back()->with('message', 'Order successfully placed !');
     }
 
     /**

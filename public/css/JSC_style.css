@@ -83,7 +83,6 @@ div.seatCharts-seat.unavailable {
 div.seatCharts-container {
 	border-right: 1px dotted #adadad;
     width: 30%;
-    margin-left: 20%;
 	padding: 20px;
 	float: left;
 }

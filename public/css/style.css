@@ -65,7 +65,21 @@
     margin-top: 20%;
     margin-bottom: 10%;
 }
-
+.booking-form {
+    width: 40%;
+    float: left;
+    -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.15);
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.15);
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+p#selected {
+    margin-top: 7px;
+    letter-spacing: 2px;
+    overflow: auto;
+}
 /*----------------------------------------*/
 
 

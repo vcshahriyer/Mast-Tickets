@@ -8,9 +8,13 @@
     <div class="wrapper">
         <div class="container">
             <div class="alert alert-success" style="display:none"></div>
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             <div id="seat-map">
                 <div class="front-indicator">{{$buses->name}}</div>
-
             </div>
             <div class="booking-details">
                 <h2>Booking Details</h2>
@@ -20,17 +24,112 @@
                 @endphp
                 @endif
                 <h3> Selected Seats (<span id="counter">0</span>):</h3>
-                @csrf
                 <ul id="selected-seats"></ul>
 
                 Total: <b>$<span id="total">0</span></b>
 
-                <button class="checkout-button">Checkout &raquo;</button>
+                <button class="checkout-button" data-toggle="modal" data-target="#myModalHorizontal">Add Seats &raquo;</button>
 
                 <div id="legend"></div>
             </div>
+            <div class="booking-form">
+                <form class="form-horizontal" method="post" action="{{route('booking.store')}}">
+                    <div class="form-group">
+                        <label  class="col-sm-4 control-label"
+                                for="seats">Seats</label>
+                        <div class="col-sm-8">
+                            @csrf
+                            <input type="text" class="{{ $errors->has('seats') ? ' is-invalid' : '' }}" name="seats" id="seats" value="" hidden/>
+                            @if ($errors->has('seats'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('seats') }}</strong>
+                                    </span>
+                            @endif
+                            <input type="number" class="{{ $errors->has('bus_id') ? ' is-invalid' : '' }}" name="bus_id" id="bus_id" value="{{$buses->id}}" hidden/>
+                            @if ($errors->has('bus_id'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('bus_id') }}</strong>
+                                    </span>
+                            @endif
+                            <input type="text" class="{{ $errors->has('name') ? ' is-invalid' : '' }}" name="date" id="date" value="{{$date}}" hidden/>
+                            @if ($errors->has('date'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                            @endif
+                            <p class="text-primary" id="selected"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"
+                               for="csname">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="name" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="csname" />
+                            @if ($errors->has('name'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"
+                               for="email">Email</label>
+                        <div class="col-sm-8">
+                            <input type="email" name="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                   id="email" placeholder="example@mail.com" value="{{ old('email') }}"/>
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"
+                               for="email">Phone</label>
+                        <div class="col-sm-8">
+                            <input type="tel" name="phone" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}"
+                                   id="phone" placeholder="017xxxxxxxx" value="{{ old('phone') }}"/>
+                            @if ($errors->has('phone'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"
+                               for="password" >Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" name="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                   id="password" placeholder="Password"/>
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"
+                               for="Cpassword" >Confirm Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" name="password_confirmation" class="form-control"
+                                   id="Cpassword" placeholder="Confirm Password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Order</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+    <!-- Modal -->
+
 @endsection
 
 
@@ -86,7 +185,7 @@
                     click: function () {
                         if (this.status() == 'available') {
                             //let's create a new <li> which we'll add to the cart items
-                            $('<li>'+this.data().category+' Seat # '+this.settings.label+': <b>$'+this.data().price+'</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
+                            $('<li>'+this.settings.label+': <b>$'+this.data().price+'</b> <a href="#" class="cancel-cart-item">[cancel]</a></li>')
                                 .attr('id', 'cart-item-'+this.settings.id)
                                 .data('seatId', this.settings.id)
                                 .appendTo($cart);

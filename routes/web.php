@@ -25,7 +25,7 @@ Route::get('/booking/{date}/{cid}/{bid}', [
     'uses' => 'BookingController@view_seats'
 ]);
 
-Route::post("/booked",'BookingController@store');
+Route::post("/booked/store",'BookingController@store')->name('booking.store');
 
 Route::post('/findBus', [
 	'as' => 'FindBus',
