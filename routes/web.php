@@ -20,12 +20,13 @@ Route::get('logout', array(
 	'uses' => '\App\Http\Controllers\Auth\LoginController@logout'
 ));
 
-Route::get('/booking/{date}/{id}', [
+Route::get('/booking/{date}/{cid}/{bid}', [
     'as' => 'booking',
     'uses' => 'BookingController@view_seats'
 ]);
 
-Route::post("/booked",'BookingController@booked');
+Route::post("/booked",'BookingController@store');
+
 Route::post('/findBus', [
 	'as' => 'FindBus',
 	'uses' => 'BookingController@search'

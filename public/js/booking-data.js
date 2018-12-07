@@ -18,7 +18,7 @@ $( document ).ready(function() {
             }
         });
         $.ajax({
-            url: 'booked',
+            url: '/booked',
             type: 'POST',
             data: products,
             dataType: 'json',

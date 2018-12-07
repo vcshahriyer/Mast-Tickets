@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Booking;
+use App\Company;
 use function PHPSTORM_META\type;
 
 class BookingController extends Controller
@@ -19,21 +20,20 @@ class BookingController extends Controller
     {
         //
     }
-	public function view_seats( Request $request,$date,$id){
-//		$data = $request->json()->all();
-//		return response()->json(['success'=>$data]);
-        $company = DB::table('buses')
+	public function view_seats( Request $request,$date,$cid,$bid){
+        $buses = DB::table('buses')
                 ->join('companies','buses.company_id','companies.id')
-                ->select('companies.name')
-                ->where('buses.company_id','=',$id)
+                ->select('companies.name','buses.fare')
+                ->where('buses.company_id','=',$cid)
+                ->where('buses.id','=',$bid)
                 ->first();
         $booked_seat = DB::table('bookings as b')
             ->where('b.dept_date','=',$date)
-            ->where('b.bus_id',$id)
+            ->where('b.bus_id',$bid)
             ->select('b.dept_date','b.bus_id', DB::raw('GROUP_CONCAT(b.my_seats SEPARATOR \',\') as seats'))
             ->groupBy('b.dept_date','b.bus_id')
             ->first();
-        return view('Booking.booking-form',['company'=>$company,'booked_seat'=>$booked_seat]);
+        return view('Booking.booking-form',['buses'=>$buses,'booked_seat'=>$booked_seat]);
 	}
 
     /**
@@ -61,6 +61,7 @@ class BookingController extends Controller
             ->where('b.route_from','=',$from)
             ->where('b.route_to','=',$to)
             ->Where('b.available','=','true')
+            ->select('companies.name','b.*')
             ->get();
 //            ->orwhereDate('statuses.till','<',Carbon::parse($date)->format('Y-m-d'))
         $booked_seat = DB::table('bookings as b')
@@ -68,7 +69,8 @@ class BookingController extends Controller
 		             ->select('b.dept_date','b.bus_id', DB::raw('SUM(b.booked_seats) as total_booked'))
 		             ->groupBy('b.dept_date','b.bus_id')
 	                 ->get();
-    	return view("Booking.search-table",['buses'=> $buses,'booked_seat'=>$booked_seat,'dept_date'=>$date]);
+        $companies = Company::all();
+        return view("Booking.search-table",['buses'=> $buses,'booked_seat'=>$booked_seat,'dept_date'=>$date,'companies'=>$companies]);
     }
 	public function myTickets(){
     	return view('Booking.my-tickets');
@@ -93,7 +95,8 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-
+        $data = $request->json()->all();
+        return response()->json(['success'=>$data]);
     }
 
     /**

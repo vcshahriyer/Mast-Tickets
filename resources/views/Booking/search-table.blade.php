@@ -11,9 +11,9 @@
                 <div class="styled-select rounded">
                     <select>
                         <option disabled selected>Operator</option>
-                        <option>Hanif enterprise</option>
-                        <option>Ena transport</option>
-                        <option>Soukhin transport</option>
+                        @foreach($companies as $company)
+                            <option>{{$company->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="styled-select rounded">
@@ -52,17 +52,17 @@
                             <td class=" column2"> <p>{{date('d-m-Y',strtotime($dept_date))}}</p> {{date('h:i A', strtotime($bus->dept_time))}}</td>
                             <td class=" column3">{{date('h:i A', strtotime($bus->arr_time))}}</td>
                             @foreach($booked_seat as $booked)
-                                @if($booked->bus_id == $bus->bus_id)
+                                @if($booked->bus_id == $bus->id)
                                     <td class="column4 text-center">
                                         {{$total = $bus->seats - $booked->total_booked}}<br>
-                                        <a href="{{route('booking',['id'=>$bus->id,'date'=>date('Y-m-d',strtotime($dept_date))])}}" class="btnbook">View Seats</a>
+                                        <a href="{{route('booking',['date'=>date('Y-m-d',strtotime($dept_date)),'cid'=>$bus->company_id,'bid'=>$bus->id])}}" class="btnbook">View Seats</a>
                                     </td>
                                 @endif
                             @endforeach
                             @if(!isset($total))
                                 <td class="column4 text-center">
                                     {{$bus->seats}}<br>
-                                    <a href="{{route('booking',['date'=>date('Y-m-d',strtotime($dept_date)),'id'=>$bus->company_id])}}" class="btnbook">View Seats</a>
+                                    <a href="{{route('booking',['date'=>date('Y-m-d',strtotime($dept_date)),'cid'=>$bus->company_id,'bid'=>$bus->id])}}" class="btnbook">View Seats</a>
                                 </td>
                             @endif
                                 <td class=" column5">

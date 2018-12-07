@@ -44,7 +44,7 @@
                                     <th scope="col">Operator (Bus Type)</th>
                                     <th scope="col">Dep.Date & Time</th>
                                     <th scope="col">Arr. Time</th>
-                                    <th scope="col">Seats Available</th>
+                                    <th scope="col">Total Seats</th>
                                     <th scope="col">Fare</th>
                                 </tr>
                                 </thead>

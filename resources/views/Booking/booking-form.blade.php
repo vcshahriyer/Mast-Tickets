@@ -9,7 +9,7 @@
         <div class="container">
             <div class="alert alert-success" style="display:none"></div>
             <div id="seat-map">
-                <div class="front-indicator">{{$company->name}}</div>
+                <div class="front-indicator">{{$buses->name}}</div>
 
             </div>
             <div class="booking-details">
@@ -61,7 +61,7 @@
                     ],
                     seats: {
                         e: {
-                            price   : 40,
+                            price   : {{$buses->fare}},
                             classes : 'economy-class', //your custom CSS class
                             category: 'Economy Class'
                         }
