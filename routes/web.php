@@ -19,10 +19,14 @@ Route::get('logout', array(
 	'as' => 'logout',
 	'uses' => '\App\Http\Controllers\Auth\LoginController@logout'
 ));
-Route::get('/booking', function () {
-    return view('Booking.booking-form');})->name("Booking");
 
-Route::post("/booked",'BookingController@booked');
+Route::get('/booking/{date}/{cid}/{bid}', [
+    'as' => 'booking',
+    'uses' => 'BookingController@view_seats'
+]);
+
+Route::post("/booked/store",'BookingController@store')->name('booking.store');
+
 Route::post('/findBus', [
 	'as' => 'FindBus',
 	'uses' => 'BookingController@search'
@@ -35,3 +39,12 @@ Route::post('/FindMyTickets', [
 	'as' => 'Find-tickets',
 	'uses' => 'BookingController@findTickets'
 ]);
+Route::group(array('prefix' => 'admin','middleware' =>'auth'), function () {
+    Route::get("/dashboard",'DashboardController@home')->name('dashboard');
+    Route::get('/insertbus','DashboardController@busInsertForm')->name("Insert-bus");
+    Route::post('/insertbus','DashboardController@busInsert')->name("register-bus");
+    Route::get('/updatebus/{BusID}','DashboardController@UpdateBusForm')->name("UpdateBus");
+    Route::post('/updatebus/{BusID}','DashboardController@UpdateBus');
+    Route::get('/viewBus','BusController@index')->name("view-bus");
+//	Route::get('users', 'UsersController@index')->name("users");
+});

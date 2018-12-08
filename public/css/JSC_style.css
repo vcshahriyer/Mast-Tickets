@@ -1,7 +1,7 @@
 
 .front-indicator {
-	width: 145px;
-	margin: 5px 32px 15px 32px;
+    width: 90%;
+    margin: 10px auto;
 	background-color: #f6f6f6;	
 	color: #adadad;
 	text-align: center;
@@ -83,7 +83,6 @@ div.seatCharts-seat.unavailable {
 div.seatCharts-container {
 	border-right: 1px dotted #adadad;
     width: 30%;
-    margin-left: 20%;
 	padding: 20px;
 	float: left;
 }
@@ -135,5 +134,5 @@ span.seatCharts-legendDescription {
 	max-height: 90px;
 	overflow-y: scroll;
 	overflow-x: none;
-	width: 170px;
+    width: 284px;
 }

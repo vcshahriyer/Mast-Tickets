@@ -126,6 +126,17 @@ h1 {
     font-weight: 600;
 	color:#3e3939;
 }
+.form-head-w3l h3{
+	text-align: center;
+	font-size: 35px;
+	line-height: 40px;;
+	border: 2px solid #3e3939;
+	margin: 0 auto;
+	background: darkcyan;
+	text-shadow: 2px 2px 3px;
+	font-weight: 600;
+	color:#3e3939;
+}
 .form-w3ls {
     background:lightblue;
 	padding: 40px 50px;
@@ -135,6 +146,36 @@ h1 {
 .tab-content {
 	padding-top: 15%;
 }
+.inputfile {
+	width: 100%;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+	fill: currentColor;
+	margin-top: -0.25em;
+	margin-right: 0.25em;
+}
+.inputfile + label {
+	max-width: 100%;
+	font-size: 16px;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	padding: 1em 0 .5em;
+	margin-bottom: 1em;
+	float: left;
+	border-bottom: 2px solid darkred;
+}
+
 
 /*-- Sign In Form --*/
 p.header {

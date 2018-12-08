@@ -42,7 +42,7 @@
     @if (Route::has('login'))
     <div class="login">
         @auth
-        <a href="#">{{str_limit(Auth::user()->name,15)}}</a>
+        <a href="{{route('dashboard')}}">{{str_limit(Auth::user()->name,15)}}</a>
         <a href="{{route("logout")}}">Log Out</a>
         @else
         <a href="{{ route('register') }}">Sign Up</a>
@@ -90,7 +90,7 @@
                         <nav id="mobile_menu_active">
                             <ul class="menu">
                                 <li><a href="{{route("Home")}}">Home</a></li>
-                                <li><a href="{{route("Booking")}}">Booking</a></li>
+                                <li><a href="{{route("my-tickets")}}">My Tickets</a></li>
                                 <li><a href="#">Gallery</a></li>
                                 <li><a href="#">Companies</a></li>
                                 <li><a href="#">Service</a></li>
@@ -108,16 +108,16 @@
 
 
     <!-- Scripts -->
-    <script src="js/jquery-3.2.0.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/jquery.meanmenu.js"></script>
-    <script src="js/jquery.scrollUp.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="{{asset('js/jquery-3.2.0.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('js/countdown.js')}}"></script>
+    <script src="{{asset('js/jquery.meanmenu.js')}}"></script>
+    <script src="{{asset('js/jquery.scrollUp.js')}}"></script>
+    <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/theme.js')}}"></script>
     @yield("script")
 </body>
 

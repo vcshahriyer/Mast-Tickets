@@ -20,6 +20,15 @@
                                     </span>
                                     @endif
                                 </div>
+                                <div class="rhf-input-box i-date">
+                                    <span>Date of Journey </span>
+                                    <input name="date" type="text" id="datepicker" placeholder="Date">
+                                    @if ($errors->has('date'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
                                 <div class="rhf-send">
                                     <button><i class="fa fa-check"></i></button>
                                 </div>

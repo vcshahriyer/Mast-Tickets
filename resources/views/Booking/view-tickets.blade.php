@@ -36,6 +36,11 @@
                             </td>
                         </tr>
                     @endforeach
+                        @if($tickets->isEmpty())
+                            <tr>
+                                <td colspan="5"><h2 class="no-result-found">No result found !</h2></td>
+                            </tr>
+                        @endif
                         </tbody>
                     </table>
                 </div>

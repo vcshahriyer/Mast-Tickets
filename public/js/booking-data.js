@@ -2,33 +2,17 @@
 $( document ).ready(function() {
 
     $(".checkout-button").on('click',function (e) {
-
         var listItems = $("#selected-seats li");
-        var product=[];
+        var product = "";
         listItems.each(function(idx, li) {
             var data = $(li).text();
-            data = data.replace("[cancel]",'');
-            product[idx] = data;
-
+            data = data.substring(0, 3);
+            product += data+',';
         });
-        var products = JSON.stringify(product);
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('input[name="_token"]').attr('value')
-            }
-        });
-        $.ajax({
-            url: 'booked',
-            type: 'POST',
-            data: products,
-            dataType: 'json',
-            success: function (result) {
-                $('.alert').show();
-                $('.alert').html(result.success);
-            }
-
-        });
-
+        var $seats = $('.form-horizontal').find('#seats');
+        var $selected = $('.form-horizontal').find('#selected');
+        $selected.html(product);
+        $seats.attr("value", product);
     });
 
 });
