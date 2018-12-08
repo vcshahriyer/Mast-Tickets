@@ -60,6 +60,60 @@ class DashboardController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function UpdateBusForm($id)
+    {
+        $uid = Auth::id();
+        $user = User::find($uid);
+        $bus = Bus::find($id);
+        return view('dashboard.view.update-bus',['bus'=>$bus,'user'=>$user]);
+    }
+
+    public  function UpdateBus(Request $request,$id){
+        $validatedData = $request->validate([
+            'busModel' => 'required|string|max:50',
+            'busType' => 'required|string|max:6',
+            'source' => 'required|alpha|max:50',
+            'destination' => 'required|alpha|max:150',
+            'deptTime' => 'required|date_format:H:i',
+            'arrTime' => 'required|date_format:H:i',
+            'seats' => 'required|numeric',
+            'fare' => 'required|numeric',
+            'status' => 'required|string|max:150',
+        ]);
+        $bus = Bus::find($id);
+        $bus->bus_model = $request->busModel;
+        $bus->bus_type = $request->busType;
+        $bus->route_from = $request->source;
+        $bus->route_to = $request->destination;
+        $bus->dept_time = $request->deptTime;
+        $bus->arr_time = $request->arrTime;
+        $bus->seats = $request->seats;
+        $bus->fare = $request->fare;
+        $bus->available = $request->status;
+        $bus->save();
+
+        $id = Auth::id();
+        $user = User::find($id);
+        $company = DB::table('users as u')
+            ->join('companies','u.company','companies.name')
+            ->select('companies.id')
+            ->where('u.id','=',$id)
+            ->first();
+        $cid =$company->id;
+        $buses = Bus::where('company_id',$cid)->get();
+        return view('dashboard.view.bus',['user'=>$user,'buses'=>$buses]);
+
+
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -102,17 +156,6 @@ class DashboardController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

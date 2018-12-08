@@ -54,7 +54,7 @@
                                         <th scope="row">{{$loop->iteration}}</th>
                                         <td>
                                             <p>{{$bus->name}}</p>
-                                            <p>{{$bus->bus_model}} {{$bus->bus_type}}</p>
+                                            <p>{{$bus->bus_model}} {{$bus->bus_type}}  <a class="btn btn-primary" href="{{route('UpdateBus',['BusID'=>$bus->id])}}">Edit</a></p>
                                             <p>Route: {{$bus->route_from}} - {{$bus->route_to}}</p>
                                         </td>
                                         <td>{{date('h:i A', strtotime($bus->dept_time))}}</td>
