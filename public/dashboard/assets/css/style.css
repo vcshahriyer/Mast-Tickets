@@ -54,6 +54,11 @@ Googel Fonts  */
   font-size: 14px;
   color: #585858;
 }
+.edit{margin-left: 10px;}
+.edit.btn-xs {
+  padding: 0 10px;
+  font-size: 13px;
+}
 .bg-flat-color-1 {
   background: #00c292; }
 
