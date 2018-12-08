@@ -24,7 +24,7 @@
                 @endphp
                 @endif
                 <h3> Selected Seats (<span id="counter">0</span>):</h3>
-                <ul id="selected-seats"></ul>
+                <ul id="selected-seats" class="scroll"></ul>
 
                 Total: <b>$<span id="total">0</span></b>
 
@@ -57,7 +57,7 @@
                                         <strong>{{ $errors->first('date') }}</strong>
                                     </span>
                             @endif
-                            <p class="text-primary" id="selected"></p>
+                            <p class="scroll" id="selected"></p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -224,6 +224,17 @@
             $('#selected-seats').on('click', '.cancel-cart-item', function () {
                 //let's just trigger Click event on the appropriate seat, so we don't have to repeat the logic here
                 sc.get($(this).parents('li:first').data('seatId')).click();
+                var listItems = $("#selected-seats li");
+                var product = "";
+                listItems.each(function(idx, li) {
+                    var data = $(li).text();
+                    data = data.substring(0, 3);
+                    product += data+',';
+                });
+                var $seats = $('.form-horizontal').find('#seats');
+                var $selected = $('.form-horizontal').find('#selected');
+                $selected.html(product);
+                $seats.attr("value", product);
             });
 
             //let's pretend some seats have already been booked

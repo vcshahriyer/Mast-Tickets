@@ -78,13 +78,18 @@ class BookingController extends Controller
 	}
 	public function findTickets(Request $request){
 		$validatedData = $request->validate([
-			'phone' => 'required|regex:/(01)[0-9]{9}/'
+			'phone' => 'required|regex:/(01)[0-9]{9}/',
+            'date'  => 'Date|nullable'
 		]);
+		$date = $request->date;
 		$tickets = DB::table('bookings')
 			->join('buses','bookings.bus_id','buses.id')
 			->leftJoin('companies','buses.company_id','companies.id')
-			->where('bookings.cs_mobile','=',$request->input('phone'))
-			->get();
+			->where('bookings.cs_mobile','=',$request->input('phone'));
+        if(isset($date)){
+            $tickets->where('bookings.dept_date',Carbon::parse($date)->format('Y-m-d'));
+        }
+        $tickets = $tickets->latest('dept_date')->get();
 		$name = Booking::where('cs_mobile','=',$request->input('phone'))->first();
 		return  view('Booking.view-tickets',['tickets'=>$tickets,'name'=>$name]);
 	}
