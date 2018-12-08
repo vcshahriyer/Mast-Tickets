@@ -10,22 +10,21 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function home()
     {
         $id = Auth::id();
         $user = User::find($id);
         return view('dashboard.main',['user'=>$user]);
     }
+
+
     public  function busInsertForm(){
         $id = Auth::id();
         $user = User::find($id);
         return view('dashboard.register-bus',['user'=>$user]);
     }
+
+
     public  function busInsert(Request $request){
         $validatedData = $request->validate([
             'busModel' => 'required|string|max:50',
@@ -59,13 +58,6 @@ class DashboardController extends Controller
         return redirect()->back()->with('message', 'Bus successfully added !');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
     public function UpdateBusForm($id)
     {
@@ -75,14 +67,15 @@ class DashboardController extends Controller
         return view('dashboard.view.update-bus',['bus'=>$bus,'user'=>$user]);
     }
 
+
     public  function UpdateBus(Request $request,$id){
         $validatedData = $request->validate([
             'busModel' => 'required|string|max:50',
             'busType' => 'required|string|max:6',
             'source' => 'required|alpha|max:50',
             'destination' => 'required|alpha|max:150',
-            'deptTime' => 'required|date_format:H:i',
-            'arrTime' => 'required|date_format:H:i',
+            'deptTime' => 'required|date_format:H:i:s',
+            'arrTime' => 'required|date_format:H:i:s',
             'seats' => 'required|numeric',
             'fare' => 'required|numeric',
             'status' => 'required|string|max:150',
@@ -98,26 +91,18 @@ class DashboardController extends Controller
         $bus->fare = $request->fare;
         $bus->available = $request->status;
         $bus->save();
+        return redirect()->route('view-bus');
+    }
 
-        $id = Auth::id();
-        $user = User::find($id);
-        $company = DB::table('users as u')
-            ->join('companies','u.company','companies.name')
-            ->select('companies.id')
-            ->where('u.id','=',$id)
-            ->first();
-        $cid =$company->id;
-        $buses = Bus::where('company_id',$cid)->get();
-        return view('dashboard.view.bus',['user'=>$user,'buses'=>$buses]);
 
+
+    public function destroy($id)
+    {
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function create()
     {
         //
@@ -156,15 +141,4 @@ class DashboardController extends Controller
         //
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

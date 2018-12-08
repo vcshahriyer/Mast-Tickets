@@ -44,8 +44,7 @@
                             <form method="post">
                                 @csrf
                                 <div class="form-group"><label for="busModel" class=" form-control-label">Bus Model</label>
-                                    <p> Current Bus Model : {{$bus->bus_model}}</p>
-                                    <input type="text" id="busModel" name="busModel" placeholder="Enter model of the bus" class="form-control {{ $errors->has('busModel') ? ' is-invalid' : '' }}" value="{{ old('busModel') }}">
+                                    <input type="text" id="busModel" name="busModel" placeholder="Enter model of the bus" value="{{$bus->bus_model}}" class="form-control {{ $errors->has('busModel') ? ' is-invalid' : '' }}" value="{{ old('busModel') }}">
                                     @if ($errors->has('busModel'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('busModel') }}</strong>
@@ -53,8 +52,7 @@
                                     @endif
                                 </div>
                                 <div class="form-group"><label for="busType" class=" form-control-label">Bus Type</label>
-                                    <p> Current Bus Type : {{$bus->bus_type}}</p>
-                                    <input type="text" id="busType" name="busType" placeholder="AC/Non AC" class="form-control {{ $errors->has('busType') ? ' is-invalid' : '' }}" value="{{ old('busType') }}">
+                                    <input type="text" id="busType" name="busType" placeholder="AC/Non AC" value="{{$bus->bus_type}}" class="form-control {{ $errors->has('busType') ? ' is-invalid' : '' }}" value="{{ old('busType') }}">
                                     @if ($errors->has('busType'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('busType') }}</strong>
@@ -65,8 +63,7 @@
                                 <div class="row form-group">
                                     <div class="col-6">
                                         <div class="form-group"><label for="source" class=" form-control-label">Source</label>
-                                            <p> Current Source : {{$bus->route_from}}</p>
-                                            <input type="text" id="source" name="source" placeholder="Enter starting point" class="form-control {{ $errors->has('source') ? ' is-invalid' : '' }}" value="{{ old('source') }}">
+                                            <input type="text" id="source" name="source" placeholder="Enter starting point" value="{{$bus->route_from}}" class="form-control {{ $errors->has('source') ? ' is-invalid' : '' }}" value="{{ old('source') }}">
                                             @if ($errors->has('source'))
                                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('source') }}</strong>
@@ -76,8 +73,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group"><label for="destination" class=" form-control-label">Destination</label>
-                                            <p> Current Destination : {{$bus->route_to}}</p>
-                                            <input type="text" id="destination" name="destination" placeholder="Enter destination point" class="form-control {{ $errors->has('destination') ? ' is-invalid' : '' }}" value="{{ old('destination') }}">
+                                            <input type="text" id="destination" name="destination" placeholder="Enter destination point" value="{{$bus->route_to}}" class="form-control {{ $errors->has('destination') ? ' is-invalid' : '' }}" value="{{ old('destination') }}">
                                             @if ($errors->has('destination'))
                                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('destination') }}</strong>
@@ -89,8 +85,7 @@
                                 <div class="row form-group">
                                     <div class="col-6">
                                         <div class="form-group"><label for="deptTime" class=" form-control-label">Dept. Time</label>
-                                            <p> Current Dept Time : {{$bus->dept_time}}</p>
-                                            <input type="time" id="deptTime" name="deptTime" class="form-control {{ $errors->has('deptTime') ? ' is-invalid' : '' }}" value="{{ old('deptTime') }}">
+                                            <input type="time" id="deptTime" name="deptTime" value="{{$bus->dept_time}}" class="form-control {{ $errors->has('deptTime') ? ' is-invalid' : '' }}" value="{{ old('deptTime') }}">
                                             @if ($errors->has('deptTime'))
                                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('deptTime') }}</strong>
@@ -100,8 +95,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group"><label for="arrTime" class=" form-control-label">Arr. Time</label>
-                                            <p> Current Arrival Time : {{$bus->arr_time}}</p>
-                                            <input type="time" id="arrTime" name="arrTime" class="form-control {{ $errors->has('arrTime') ? ' is-invalid' : '' }}" value="{{ old('arrTime') }}">
+                                            <input type="time" id="arrTime" name="arrTime" value="{{$bus->arr_time}}" class="form-control {{ $errors->has('arrTime') ? ' is-invalid' : '' }}" value="{{ old('arrTime') }}">
                                             @if ($errors->has('arrTime'))
                                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('arrTime') }}</strong>
@@ -113,8 +107,7 @@
                                 <div class="row form-group">
                                     <div class="col-6">
                                         <div class="form-group"><label for="deptTime" class=" form-control-label">Seats</label>
-                                            <p> Current Seats : {{$bus->seats}}</p>
-                                            <input type="number" id="seats" name="seats" placeholder="Number of seats" class="form-control {{ $errors->has('seats') ? ' is-invalid' : '' }}" value="{{ old('seats') }}">
+                                            <input type="number" id="seats" name="seats" placeholder="Number of seats"value="{{$bus->seats}}" class="form-control {{ $errors->has('seats') ? ' is-invalid' : '' }}" value="{{ old('seats') }}">
                                             @if ($errors->has('seats'))
                                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('seats') }}</strong>
@@ -124,8 +117,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group"><label for="arrTime" class=" form-control-label">Fare</label>
-                                            <p> Current Seat Fare : {{$bus->fare}}</p>
-                                            <input type="number" id="fare" name="fare" placeholder="Price of a seat" class="form-control {{ $errors->has('fare') ? ' is-invalid' : '' }}" value="{{ old('fare') }}">
+                                            <input type="number" id="fare" name="fare" placeholder="Price of a seat" value="{{$bus->fare}}" class="form-control {{ $errors->has('fare') ? ' is-invalid' : '' }}" value="{{ old('fare') }}">
                                             @if ($errors->has('fare'))
                                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('fare') }}</strong>
@@ -135,8 +127,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group"><label for="status" class=" form-control-label">Availabilty</label>
-                                            <p> Current Bus Status : {{$bus->available}}</p>
-                                            <input type="text" id="status" name="status" placeholder="Availability of Bus" class="form-control {{ $errors->has('status') ? ' is-invalid' : '' }}" value="{{ old('status') }}">
+                                            <input type="text" id="status" name="status" placeholder="Availability of Bus" value="{{$bus->available}}" class="form-control {{ $errors->has('status') ? ' is-invalid' : '' }}" value="{{ old('status') }}">
                                             @if ($errors->has('status'))
                                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('status') }}</strong>
