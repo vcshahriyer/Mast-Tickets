@@ -18,14 +18,42 @@ class DashboardController extends Controller
     public function home()
     {
         $id = Auth::id();
-        $user = User::find($id);
-        return view('dashboard.main',['user'=>$user]);
+        $company = DB::table('users as u')
+            ->join('companies','u.company','companies.name')
+            ->select('companies.id','u.company','u.image')
+            ->where('u.id','=',$id)
+            ->first();
+        $cid =$company->id;
+
+        $orders = DB::table('bookings as bo')
+            ->leftJoin('buses as bs','bo.bus_id','bs.id')
+            ->select('bs.company_id','bs.bus_model','bs.route_from','bs.route_to','bs.dept_time'
+            ,'bs.seats','bs.fare','bo.*')
+            ->where('bs.company_id',$cid)
+            ->latest('dept_date')
+            ->get();
+
+        $revenue = DB::table('bookings as b')
+            ->leftJoin('buses as bs','b.bus_id','bs.id')
+            ->where('bs.company_id',$cid)
+            ->select('b.bus_id','bs.company_id','bs.fare', DB::raw('SUM(b.booked_seats) as total_booked'))
+            ->groupBy('b.bus_id','bs.company_id','bs.fare')
+            ->get();
+//        dd($revenue);
+        $buses = Bus::where('company_id',$cid)->get();
+        $customers =DB::table('bookings')->leftJoin('buses','bookings.bus_id','buses.id')
+            ->where('company_id',$cid)->distinct('cs_mobile')->count('cs_mobile');
+
+        return view('dashboard.main',['user'=>$company,'orders'=>$orders,
+            'revenue'=>$revenue,'buses'=>$buses,'customers'=>$customers]);
     }
+
     public  function busInsertForm(){
         $id = Auth::id();
         $user = User::find($id);
         return view('dashboard.register-bus',['user'=>$user]);
     }
+
     public  function busInsert(Request $request){
         $validatedData = $request->validate([
             'busModel' => 'required|string|max:50',

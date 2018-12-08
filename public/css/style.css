@@ -3992,6 +3992,13 @@ span.invalid-feedback {
 .ticket_view tr td{
     font-size: 16px;
 }
+.no-result-found{
+    text-align: center;
+    color: #f97c7c;
+    font-size: 27px;
+    font-family: monospace;
+    padding: 45px;
+}
 .column1 {
     width: 24%;
     padding-left: 40px;

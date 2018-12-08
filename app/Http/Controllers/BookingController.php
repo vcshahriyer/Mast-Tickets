@@ -78,7 +78,7 @@ class BookingController extends Controller
 	}
 	public function findTickets(Request $request){
 		$validatedData = $request->validate([
-			'phone' => 'required|regex:/(01)[0-9]{9}/',
+			'phone' => 'required|regex:/(01)[0-9]{9}/|exists:bookings,cs_mobile',
             'date'  => 'Date|nullable'
 		]);
 		$date = $request->date;
