@@ -65,7 +65,7 @@
 @extends('Master')
 
 @section('css')
-<link href="css/login.css" rel='stylesheet' type='text/css' media="all" />
+<link href="{{asset('css/login.css')}}" rel='stylesheet' type='text/css' media="all" />
 <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 @endsection
 
@@ -97,7 +97,7 @@
                         @endif
 
                         <p class="header">Confirm Password</p>
-                        <input type="password" name="password" placeholder="Confirm Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="required">
+                        <input type="password" name="password_confirmation" placeholder="Confirm Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}" required="required">
                         
                         <input type="submit" class="register" value="Reset Password">
                     </form>

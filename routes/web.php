@@ -19,7 +19,6 @@ Route::get('logout', array(
 	'as' => 'logout',
 	'uses' => '\App\Http\Controllers\Auth\LoginController@logout'
 ));
-
 Route::get('/booking/{date}/{cid}/{bid}', [
     'as' => 'booking',
     'uses' => 'BookingController@view_seats'
@@ -38,6 +37,10 @@ Route::get('/mytickets', [
 Route::post('/FindMyTickets', [
 	'as' => 'Find-tickets',
 	'uses' => 'BookingController@findTickets'
+]);
+Route::get('/companies', [
+	'as' => 'Company',
+	'uses' => 'BusController@busCompany'
 ]);
 Route::group(array('prefix' => 'admin','middleware' =>'auth'), function () {
     Route::get("/dashboard",'DashboardController@home')->name('dashboard');

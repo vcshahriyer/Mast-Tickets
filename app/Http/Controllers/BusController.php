@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Bus;
+use App\Company;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 class BusController extends Controller
@@ -27,7 +28,10 @@ class BusController extends Controller
         $buses = Bus::where('company_id',$cid)->get();
         return view('dashboard.view.bus',['user'=>$user,'buses'=>$buses]);
     }
-
+    public function busCompany(){
+        $busCompany = Company::all();
+        return view('Companies.view',['companies'=>$busCompany]);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -64,13 +64,7 @@
                                 <li class="active"><a href="{{route("Home")}}">Home</a></li>
                                 <li><a href="{{route("my-tickets")}}">My Tickets</a></li>
                                 <li><a href="#">Gallery</a></li>
-                                <li><a href="#">Companies</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Hanif</a></li>
-                                        <li><a href="#">Ena</a></li>
-                                        <li><a href="#">S.R Travel</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{ route("Company") }}">Companies</a></li>
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#">Contact Us</a></li>
                             </ul>
