@@ -56,20 +56,17 @@
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active">
                                     <div class="slider-hero">
-                                        <h5 class="sh-intro">Welcome to</h5>
                                         <h2 class="sh-title">Mast Tickets</h2>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="slider-hero">
-                                        <h5 class="sh-intro">Welcome to</h5>
                                         <h2 class="sh-title">Mast Tickets</h2>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="slider-hero">
-                                        <h5 class="sh-intro">Welcome to</h5>
                                         <h2 class="sh-title">Mast Tickets</h2>
                                     </div>
                                 </div>

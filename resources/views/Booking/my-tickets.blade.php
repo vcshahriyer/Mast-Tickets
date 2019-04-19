@@ -21,8 +21,8 @@
                                     @endif
                                 </div>
                                 <div class="rhf-input-box i-date">
-                                    <span>Date of Journey </span>
-                                    <input name="date" type="text" id="datepicker" placeholder="Date">
+                                    <span>Date of Journey (optional)</span>
+                                    <input name="date" type="date" id="datepicker" placeholder="Date">
                                     @if ($errors->has('date'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('date') }}</strong>

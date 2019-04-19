@@ -800,10 +800,6 @@
     .our-contact-area {
         padding: 152px 0 49px;
     }
-    /*home-3*/
-    .h3-logo {
-        text-align: center;
-    }
     .h3-service-box {
         margin: 0 0 30px;
     }
@@ -812,7 +808,6 @@
     }
     .h3-pick-section-title h2,
     .h3-pick-section-title h2 span {
-        ;
         font-size: 34px;
         line-height: 38px;
     }

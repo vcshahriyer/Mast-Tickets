@@ -39,17 +39,6 @@
     @yield("preloader")
     <!-- header-start -->
     <header class="header-3">
-    @if (Route::has('login'))
-    <div class="login">
-        @auth
-        <a href="{{route('dashboard')}}">{{str_limit(Auth::user()->name,15)}}</a>
-        <a href="{{route("logout")}}">Log Out</a>
-        @else
-        <a href="{{ route('register') }}">Sign Up</a>
-        <a href="{{ route('login') }}">Sign In</a>
-        @endauth
-    </div>
-    @endif
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
@@ -63,10 +52,21 @@
                             <ul class="menu">
                                 <li class="active"><a href="{{route("Home")}}">Home</a></li>
                                 <li><a href="{{route("my-tickets")}}">My Tickets</a></li>
-                                <li><a href="#">Gallery</a></li>
                                 <li><a href="{{ route("Company") }}">Companies</a></li>
                                 <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Account</a>
+                                    <ul class="dropdown">
+                                        @if (Route::has('login'))
+                                            @auth
+                                            <li><a href="{{route('dashboard')}}">{{str_limit(Auth::user()->name,15)}}</a></li>
+                                            <li><a href="{{route("logout")}}">Log Out</a></li>
+                                            @else
+                                            <li><a href="{{ route('register') }}">Sign Up</a></li>
+                                            <li><a href="{{ route('login') }}">Sign In</a></li>
+                                            @endauth
+                                        @endif
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -85,11 +85,18 @@
                             <ul class="menu">
                                 <li><a href="{{route("Home")}}">Home</a></li>
                                 <li><a href="{{route("my-tickets")}}">My Tickets</a></li>
-                                <li><a href="#">Gallery</a></li>
                                 <li><a href="#">Companies</a></li>
                                 <li><a href="#">Service</a></li>
                                 <li><a href="#">About Us</a></li>
-                                <li class="active"><a href="#">Contact Us</a></li>
+                                @if (Route::has('login'))
+                                            @auth
+                                            <li><a href="{{route('dashboard')}}">{{str_limit(Auth::user()->name,15)}}</a></li>
+                                            <li><a href="{{route("logout")}}">Log Out</a></li>
+                                            @else
+                                            <li><a href="{{ route('register') }}">Sign Up</a></li>
+                                            <li><a href="{{ route('login') }}">Sign In</a></li>
+                                            @endauth
+                                @endif
                             </ul>
                         </nav>
                     </div>

@@ -569,7 +569,6 @@ header {
     top: -10px;
     width: 100%;
 }
-
 .main-menu ul li a {
     color: #fff;
     display: block;
@@ -580,15 +579,15 @@ header {
     text-transform: uppercase;
     text-decoration: none;
 }
-
 .main-menu ul li:hover>a {
     color: #b58a60;
 }
-
 .main-menu ul li:first-child a {
     padding-left: 0;
 }
-
+.header-3 .col-md-10.hidden-sm.hidden-xs {
+    margin-top: 3%;
+}
 /*dropdown*/
 
 .main-menu ul li .dropdown {
@@ -867,16 +866,6 @@ header {
 .slider-hero {
     text-align: right;
 }
-
-.slider-hero .sh-intro {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 18px;
-    margin: 0 0 12px;
-}
-
 .slider-hero .sh-title {
     color: #fff;
     font-size: 72px;
@@ -1175,3 +1164,12 @@ span.invalid-feedback {
     margin-bottom: 3%;
     font-family: inherit;
 }
+@media only screen and (max-width: 425px) {
+    .slider-hero h2.sh-title {
+        font-size: 35px;
+        text-align: center;
+    }
+    .h3-logo img{
+        max-width: 40%;
+    }
+  }
