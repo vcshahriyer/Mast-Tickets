@@ -2,7 +2,7 @@
 
 
 ## About Mast Tickets
-Open paltform of bus service. Company can register their account and register their buses. 
+Open platform of bus service. Company can register their account and register their buses. 
 
 Custommer can easily search and buy tickets from different different company.
 
